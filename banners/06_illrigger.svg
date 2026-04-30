@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="110" viewBox="0 0 680 110">
+  <defs>
+    <pattern id="ill-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect width="22" height="22" fill="none" stroke="#4A0010" stroke-width="0.4" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="680" height="110" fill="#0F0005"/>
+  <rect width="680" height="110" fill="url(#ill-grid)"/>
+  <rect x="0" y="0" width="680" height="2" fill="#C0392B" opacity="0.9"/>
+  <rect x="0" y="108" width="680" height="2" fill="#C0392B" opacity="0.9"/>
+  <!-- infernal seal rings -->
+  <circle cx="340" cy="55" r="45" fill="none" stroke="#7B0D1E" stroke-width="0.5" opacity="0.35"/>
+  <circle cx="340" cy="55" r="38" fill="none" stroke="#7B0D1E" stroke-width="0.3" opacity="0.25"/>
+  <!-- corner marks -->
+  <line x1="40" y1="14" x2="60" y2="14" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="14" x2="40" y2="34" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="640" y1="14" x2="620" y2="14" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="640" y1="14" x2="640" y2="34" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="96" x2="60" y2="96" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="40" y1="96" x2="40" y2="76" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="640" y1="96" x2="620" y2="96" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <line x1="640" y1="96" x2="640" y2="76" stroke="#C0392B" stroke-width="1" opacity="0.5"/>
+  <text x="340" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#E74C3C" letter-spacing="6" opacity="0.8">NEW CLASS</text>
+  <text x="340" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#E74C3C" letter-spacing="2" font-weight="bold">ILLRIGGER</text>
+  <text x="340" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7B0D1E" letter-spacing="2.5" opacity="0.9">HELLSPEAKER  ·  PAINKILLER  ·  SANGUINE KNIGHT  ·  SHADOWMASTER</text>
+</svg>

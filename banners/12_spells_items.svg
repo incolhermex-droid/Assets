@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="90" viewBox="0 0 680 90">
+  <defs>
+    <pattern id="si-stars" width="25" height="25" patternUnits="userSpaceOnUse">
+      <circle cx="12.5" cy="12.5" r="0.6" fill="#1A3040" opacity="0.6"/>
+      <circle cx="0" cy="0" r="0.4" fill="#1A3040" opacity="0.4"/>
+      <circle cx="25" cy="25" r="0.4" fill="#1A3040" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="680" height="90" fill="#060C14"/>
+  <rect width="680" height="90" fill="url(#si-stars)"/>
+  <rect x="0" y="0" width="680" height="2" fill="#2E86C1" opacity="0.8"/>
+  <rect x="0" y="88" width="680" height="2" fill="#2E86C1" opacity="0.8"/>
+  <!-- magic circle -->
+  <circle cx="340" cy="45" r="36" fill="none" stroke="#1A5276" stroke-width="0.5" opacity="0.35"/>
+  <circle cx="340" cy="45" r="28" fill="none" stroke="#1A5276" stroke-width="0.3" opacity="0.22"/>
+  <!-- divider lines -->
+  <line x1="40" y1="45" x2="295" y2="45" stroke="#1A5276" stroke-width="0.5" opacity="0.5"/>
+  <line x1="385" y1="45" x2="640" y2="45" stroke="#1A5276" stroke-width="0.5" opacity="0.5"/>
+  <text x="340" y="39" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#5DADE2" letter-spacing="5" opacity="0.75">ARCANE ARSENAL</text>
+  <text x="340" y="62" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#85C1E9" letter-spacing="3" font-weight="bold">SPELLS &amp; ITEMS</text>
+  <text x="340" y="75" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#1A5276" letter-spacing="2.5" opacity="0.9">60+ NEW SPELLS  ·  FIREARMS  ·  UNIQUE LOOT WITH LOCATIONS</text>
+</svg>

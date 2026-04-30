@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="90" viewBox="0 0 680 90">
+  <defs>
+    <pattern id="wm-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#5C1010" stroke-width="0.6" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="680" height="90" fill="#140404"/>
+  <rect width="680" height="90" fill="url(#wm-hatch)"/>
+  <rect x="0" y="0" width="680" height="2" fill="#C0392B" opacity="0.85"/>
+  <rect x="0" y="88" width="680" height="2" fill="#C0392B" opacity="0.85"/>
+  <rect x="40" y="12" width="600" height="66" fill="none" stroke="#5C1010" stroke-width="0.5" opacity="0.55"/>
+  <!-- crossed swords hint -->
+  <line x1="60" y1="25" x2="78" y2="65" stroke="#C0392B" stroke-width="1" opacity="0.3"/>
+  <line x1="78" y1="25" x2="60" y2="65" stroke="#C0392B" stroke-width="1" opacity="0.3"/>
+  <line x1="602" y1="25" x2="620" y2="65" stroke="#C0392B" stroke-width="1" opacity="0.3"/>
+  <line x1="620" y1="25" x2="602" y2="65" stroke="#C0392B" stroke-width="1" opacity="0.3"/>
+  <line x1="100" y1="45" x2="240" y2="45" stroke="#5C1010" stroke-width="0.5" opacity="0.6"/>
+  <line x1="440" y1="45" x2="580" y2="45" stroke="#5C1010" stroke-width="0.5" opacity="0.6"/>
+  <text x="340" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#C0392B" letter-spacing="5" opacity="0.8">NEW COMBAT LAYER</text>
+  <text x="340" y="61" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#E74C3C" letter-spacing="4" font-weight="bold">WEAPON MASTERY</text>
+  <text x="340" y="74" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#7B1010" letter-spacing="2.5" opacity="0.85">CLEAVE  ·  GRAZE  ·  TOPPLE  ·  NICK  ·  VEX  ·  SLOW  ·  PUSH  ·  SAP  ·  FLEX</text>
+</svg>

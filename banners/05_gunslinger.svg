@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="110" viewBox="0 0 680 110">
+  <defs>
+    <pattern id="gs-lines" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#4A2000" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="680" height="110" fill="#140800"/>
+  <rect width="680" height="110" fill="url(#gs-lines)"/>
+  <rect x="0" y="0" width="680" height="2" fill="#D35400" opacity="0.9"/>
+  <rect x="0" y="108" width="680" height="2" fill="#D35400" opacity="0.9"/>
+  <rect x="40" y="14" width="600" height="82" fill="none" stroke="#5D2E00" stroke-width="0.5" opacity="0.5"/>
+  <!-- bullet holes decorative -->
+  <circle cx="80" cy="30" r="4" fill="none" stroke="#D35400" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="80" cy="30" r="1.5" fill="#D35400" opacity="0.3"/>
+  <circle cx="600" cy="80" r="4" fill="none" stroke="#D35400" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="600" cy="80" r="1.5" fill="#D35400" opacity="0.3"/>
+  <circle cx="610" cy="30" r="3" fill="none" stroke="#D35400" stroke-width="0.8" opacity="0.25"/>
+  <circle cx="70" cy="82" r="3" fill="none" stroke="#D35400" stroke-width="0.8" opacity="0.25"/>
+  <text x="340" y="44" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#E59866" letter-spacing="6" opacity="0.8">NEW CLASS</text>
+  <text x="340" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#F0A500" letter-spacing="2" font-weight="bold">GUNSLINGER</text>
+  <text x="340" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#7D4800" letter-spacing="3" opacity="0.85">HIGH ROLLER  ·  SPELLSLINGER  ·  WHITE HAT</text>
+</svg>

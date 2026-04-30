@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="220" viewBox="0 0 680 220">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#8B6914" stroke-width="0.3" opacity="0.4"/>
+    </pattern>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#C9A227" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="680" height="220" fill="#0D0B07"/>
+  <rect width="680" height="220" fill="url(#grid)"/>
+  <rect width="680" height="220" fill="url(#dots)"/>
+  <rect x="0" y="0" width="680" height="3" fill="#C9A227" opacity="0.9"/>
+  <rect x="0" y="217" width="680" height="3" fill="#C9A227" opacity="0.9"/>
+  <line x1="40" y1="0" x2="40" y2="220" stroke="#C9A227" stroke-width="0.5" opacity="0.22"/>
+  <line x1="640" y1="0" x2="640" y2="220" stroke="#C9A227" stroke-width="0.5" opacity="0.22"/>
+  <polygon points="60,15 65,10 70,15 65,20" fill="#C9A227" opacity="0.35"/>
+  <polygon points="610,15 615,10 620,15 615,20" fill="#C9A227" opacity="0.35"/>
+  <polygon points="60,205 65,200 70,205 65,210" fill="#C9A227" opacity="0.35"/>
+  <polygon points="610,205 615,200 620,205 615,210" fill="#C9A227" opacity="0.35"/>
+  <polygon points="340,18 360,30 360,54 340,66 320,54 320,30" fill="none" stroke="#C9A227" stroke-width="1" opacity="0.6"/>
+  <polygon points="340,24 354,33 354,51 340,60 326,51 326,33" fill="none" stroke="#C9A227" stroke-width="0.5" opacity="0.3"/>
+  <text x="340" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#C9A227" font-weight="bold">&#9876;</text>
+  <rect x="80" y="85" width="520" height="1.5" fill="#C9A227" opacity="0.2"/>
+  <rect x="80" y="133" width="520" height="1.5" fill="#C9A227" opacity="0.2"/>
+  <line x1="40" y1="110" x2="200" y2="110" stroke="#C9A227" stroke-width="0.5" opacity="0.35"/>
+  <circle cx="40" cy="110" r="2.5" fill="#C9A227" opacity="0.5"/>
+  <circle cx="200" cy="110" r="1.5" fill="#C9A227" opacity="0.3"/>
+  <line x1="480" y1="110" x2="640" y2="110" stroke="#C9A227" stroke-width="0.5" opacity="0.35"/>
+  <circle cx="640" cy="110" r="2.5" fill="#C9A227" opacity="0.5"/>
+  <circle cx="480" cy="110" r="1.5" fill="#C9A227" opacity="0.3"/>
+  <text x="340" y="77" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#C9A227" letter-spacing="6" opacity="0.7">BALDUR'S GATE 3 MOD</text>
+  <text x="340" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#E8C547" letter-spacing="2" font-weight="bold">D&amp;D 5.5e</text>
+  <text x="340" y="148" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#C9A227" letter-spacing="5" opacity="0.95">ALL-IN-ONE BEYOND</text>
+  <text x="340" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#8B6914" letter-spacing="4" opacity="0.85">THE WORLD UPDATE</text>
+</svg>
