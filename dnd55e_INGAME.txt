@@ -1,0 +1,272 @@
+D&D 5.5e ALL-IN-ONE BEYOND — THE WORLD UPDATE
+
+BG3 was built on D&D 2014 rules.
+BG3 WITH THIS MOD runs on the official 2024 Player's Handbook.
+
+■ Every base class rebuilt from scratch.
+■ Three brand new classes added.
+■ 80+ feats across five sourcebooks.
+■ New races, backgrounds, spells, and items.
+■ All in one standalone mod. No dependencies.
+
+------------------------
+
+CORE RULES — REBUILT
+
+The 2024 PHB changes how the game works at its foundation.
+
+■ BLOODIED — Creatures at or below 50% HP gain the Bloodied condition. Many abilities interact with this state.
+■ HEAVY ARMOR STRENGTH REQUIREMENT — Strength 13 required to wear Heavy Armor effectively. Low-STR casters can no longer wear plate for free.
+■ ONE SPELL SLOT PER TURN — You can only expend one spell slot per turn. No more double-casting.
+■ EQUIPPING WEAPONS — Draw or equip a weapon as part of your Attack action.
+■ PRONE REWORK — Standing costs half your Speed. Melee attacks have Advantage, ranged attacks have Disadvantage.
+■ HIDING REWORK — Stealth updated to 2024 standards.
+■ EXTRA ATTACK + WAR MAGIC — Certain classes can now mix spells and attacks in the same Extra Attack sequence.
+■ HEAVY WEAPON ABILITY REQUIREMENT — Heavy weapons require appropriate ability scores.
+
+------------------------
+
+CLASS OVERHAUL — 12 BASE CLASSES REBUILT
+
+All subclasses now unlock at Level 3. Every class redesigned for the 2024 PHB.
+
+BARBARIAN
+Primal Knowledge (Lvl 3) — Brutal Strike (Lvl 9) — Instinctive Pounce
+
+BARD
+Font of Inspiration (Lvl 5) — Magical Secrets reworked (Lvl 10)
+
+CLERIC
+Divine Order (Lvl 1) — Sear Undead (Lvl 5) — Blessed Strikes (Lvl 7)
+
+DRUID
+Primal Order (Lvl 1) — Wild Resurgence (Lvl 5) — Elemental Fury (Lvl 7)
+
+FIGHTER
+Tactical Mind (Lvl 2) — Tactical Shift (Lvl 5) — Tactical Master (Lvl 9)
+
+MONK
+Monk's Focus replaces Ki — Uncanny Metabolism (Lvl 2) — Deflect Attacks (Lvl 3)
+
+PALADIN
+Divine Smite redesigned as a prepared spell — Faithful Steed (Lvl 5)
+
+RANGER
+Favored Enemy reworked (Lvl 1) — Deft Explorer (Lvl 2) — Roving (Lvl 6)
+
+ROGUE
+Cunning Strike (Lvl 5) — Improved Cunning Strike (Lvl 11)
+
+SORCERER
+Innate Sorcery (Lvl 1) — Sorcery Incarnate (Lvl 7)
+
+WARLOCK
+Invocations from Lvl 1 — 20+ invocations available — Magical Cunning (Lvl 2) — Mystic Arcanum (Lvl 11)
+
+WIZARD
+Ritual Adept (Lvl 2) — Scholar (Lvl 2)
+
+------------------------
+
+NEW CLASSES — THREE FULL CLASSES ADDED
+
+------------------------
+
+GUNSLINGER
+
+Risk is in a Gunslinger's blood. Bold renegades who forge their own path with dangerous firearms — surviving by wits, split-second timing, and a considerable amount of luck.
+
+A full martial class built around firearms and the RISK resource. Weapon Mastery at Level 1.
+
+Core Features:
+■ Firearm Expert (Lvl 1)
+■ Quick Draw (Lvl 1)
+■ Critical Shot (Lvl 2)
+■ Risk (Lvl 2)
+■ Gut Shot (Lvl 5)
+■ Evasion (Lvl 7)
+■ Overkill (Lvl 11)
+
+Subclasses:
+■ HIGH ROLLER — Push your luck. Poker Face, Liar's Dice, Risky Business.
+■ SPELLSLINGER — Magic meets gunfire. Bang You're Dead, Spellshot, Counter-Mage.
+■ WHITE HAT — The lawful gunslinger. Lay Down the Law, Steely-Eyed, Long Arm of the Law.
+
+------------------------
+
+ILLRIGGER
+
+Knights, assassins, and terror-commandos of Hell. Illriggers carry out their archdevil's infernal will through a unique SEAL system — place Seals on enemies, then detonate them.
+
+Core Features:
+■ Baleful Interdict (Lvl 1)
+■ Combat Mastery (Lvl 2)
+■ Interdiction (Lvl 2)
+■ Infernal Conduit (Lvl 6)
+■ Blood Price (Lvl 10)
+■ Terrorizing Force (Lvl 11)
+
+Subclasses:
+■ HELLSPEAKER (Moloch) — Manipulation and charm. Honey-Sweet Blades, Charm Enemy.
+■ PAINKILLER (Dispater) — Pure destruction. "You Die on My Command!"
+■ SANGUINE KNIGHT (Sutekh) — Blood magic and healing. Exsanguinate, Blood for Blood.
+■ SHADOWMASTER — Assassination and stealth. Marked for Death, Umbral Killer.
+
+------------------------
+
+ARTIFICER
+
+Masters of magical invention. Artificers use their genius to create wonders — and turn those wonders into weapons.
+
+Core Features:
+■ Replicate Magic Item (Lvl 2)
+■ Spellcasting (Lvl 2)
+■ Flash of Genius (Lvl 7)
+■ Magic Item Adept (Lvl 10)
+■ Spell-Storing Item (Lvl 11)
+
+Subclasses:
+■ ALCHEMIST — Experimental Elixirs, Alchemical Savant, Restorative Reagents.
+■ ARMORER — Arcane Armor, Armor Model, Extra Attack (Lvl 5).
+■ ARTILLERIST — Eldritch Cannon, Arcane Firearm, Explosive Cannon.
+
+------------------------
+
+WEAPON MASTERY — NEW COMBAT LAYER
+
+Every martial character unlocks Weapon Mastery at Level 1.
+Each weapon type has a unique special property.
+
+■ CLEAVE — Hit a second adjacent creature on a successful attack.
+■ GRAZE — Deal ability modifier damage even on a miss.
+■ TOPPLE — Force a CON save or knock the target Prone.
+■ NICK — Light weapons grant an extra attack without using your Bonus Action.
+■ VEX — Gain Advantage on your next attack against the same target.
+■ SLOW — Reduce target Speed by 10 ft until your next turn.
+■ PUSH — Push the target 10 ft away.
+■ SAP — Target has Disadvantage on its next attack roll.
+■ FLEX — Use one-handed or two-handed for different damage dice.
+
+------------------------
+
+FEATS — 80+ OPTIONS ACROSS FIVE SOURCEBOOKS
+
+PLAYER'S HANDBOOK 2024
+Origin Feats (available at Level 1 via Backgrounds):
+Alert, Lucky, Magic Initiate, Musician, Savage Attacker, Skilled, Tavern Brawler, Tough, Healer
+
+General Feats:
+Actor, Athlete, Charger, Crossbow Expert, Defensive Duelist, Dual Wielder, Dungeon Delver, Durable, Elemental Adept, Great Weapon Master, Heavily Armored, Heavy Armor Master, Lightly Armored, Mage Slayer, Martial Adept, Medium Armor Master, Polearm Master, Resilient, Ritual Caster, Sentinel, Sharpshooter, Shield Master, Speedy, Spell Sniper, War Caster, Weapon Master
+
+New General Feats:
+Crusher, Fey Touched, Inspiring Leader, Mounted Combatant, Piercer, Poisoner, Shadow Touched, Skill Expert, Skulker, Slasher
+
+XANATHAR'S GUIDE TO EVERYTHING
+Dragon Fear, Dragon Hide, Dwarven Fortitude, Elven Accuracy, Fade Away, Flames of Phlegethos, Infernal Constitution, Orcish Fury, Squat Nimbleness
+
+TASHA'S CAULDRON OF EVERYTHING
+Eldritch Adept, Fighting Initiate, Metamagic Adept
+
+FORGOTTEN REALMS: HEROES OF FAERÛN
+Origin Feats: Cult of the Dragon Initiate, Emerald Enclave Fledgling, Harper Agent, Lords' Alliance Agent, Purple Dragon Rook, Spellfire Spark, Tyro of the Gauntlet, Zhentarim Ruffian
+General Feats: Cold Caster, Dragonscarred, Enclave Magic, Fairy Trickster, Genie Magic, Harper Teamwork, Lordly Resolve, Mythal Touched, Order's Resilience, Purple Dragon Commandant, Spellfire Adept, Zhentarim Tactics
+
+THE LORD OF THE RINGS ROLEPLAYING
+Deadly Archery, Dragon-Slayer, Fierce Shot, Gleam of Wrath, Nimbleness
+
+------------------------
+
+RACES — REBUILT FOR 2024
+
+All base races reworked. Four extra races available via Human Level 1 Passive.
+
+■ AASIMAR (via Human) — Celestial Resistance, Healing Hands, Celestial Revelation
+■ DHAMPIR (via Human) — Speed 35 ft, Trace of Undeath, Vampiric Bite
+■ DRAGONBORN — Draconic Ancestry, Breath Weapon, Darkvision, Draconic Flight
+■ DWARF — Darkvision, Dwarven Resilience
+■ ELF — Fey Ancestry, Keen Senses. Subraces: Drow / High Elf / Wood Elf
+■ GITHYANKI — Astral Knowledge, Githyanki Psionics, Psychic Resilience
+■ GNOME — Darkvision, Gnomish Cunning
+■ GOLIATH (via Human) — Speed 35 ft, Giant Ancestry (6 options), Large Form
+■ HALF-ELF — Fey Ancestry, Resourceful. Subraces: Drow / High / Wood
+■ HALFLING — Brave, Luck
+■ HUMAN — Resourceful, Skillful, Versatile
+■ KALASHTAR (via Human) — Dual Mind, Mental Discipline, Severed from Dreams
+■ ORC — Adrenaline Rush, Darkvision, Relentless Endurance
+■ TIEFLING — Darkvision, Thaumaturgy. Subraces: Asmodeus / Mephistopheles / Zariel
+
+------------------------
+
+BACKGROUNDS — 37 TOTAL WITH ORIGIN FEATS
+
+Every Background grants an Origin Feat at Level 1.
+
+PLAYER'S HANDBOOK (19):
+Acolyte, Charlatan, Criminal, Entertainer, Farmer, Folk Hero, Guide, Guild Artisan, Haunted One, Hermit, Merchant, Noble, Outlander, Sage, Sailor, Scribe, Soldier, Urchin, Wayfarer
+
+FORGOTTEN REALMS: HEROES OF FAERÛN (18):
+Chondathan Freebooter, Dead Magic Dweller, Dragon Cultist, Emerald Enclave Caretaker, Flaming Fist Mercenary, Genie Touched, Harper, Ice Fisher, Knight of the Gauntlet, Lords' Alliance Vassal, Moonwell Pilgrim, Mulhorandi Tomb Raider, Mythalkeeper, Purple Dragon Squire, Rashemi Wanderer, Shadowmasters Exile, Spellfire Initiate, Zhentarim Mercenary
+
+------------------------
+
+SPELLS — 60+ NEW AND REVISED
+
+Cantrips: Green-Flame Blade, Mind Sliver, Sorcerous Burst, Starry Wisp, Sword Burst, Thunderclap, True Strike (redesigned), Word of Radiance, Finger Guns, Hellfire
+
+Levels 1-2: Chromatic Orb, Divine Smite (now a spell), Hell's Lash, Arcane Vigor, Mind Spike, Shadow Blade, Snilloc's Snowball Swarm, Summon Beast, Tasha's Mind Whip, Warding Bond
+
+Levels 3-5: Conjure Barrage, Crusader's Mantle, Fount of Moonlight, Aura of Vitality, Bestow Curse, Lightning Arrow, Summon Fey, Steel Wind Strike, Synaptic Static
+
+Levels 6+: Circle of Death, Disintegrate (revised)
+
+------------------------
+
+ITEMS — NEW WEAPONS AND UNIQUE LOOT
+
+Firearms (Gunslinger):
+■ Pistol / Pistol +1 / Pistol +2
+■ Musket / Musket +1 / Musket +2
+
+Class-specific loot:
+■ MOON SICKLE — Druid and Ranger. Location: Front of the Idol of Silvanus.
+■ HOLY AVENGER — Paladin. Location: Rosymorn Monastery.
+■ TRUE NAME — Illrigger. Location: He Who Was.
+
+Other notable items:
+Argument Solver, Blazer of Benevolence, Cap of Curing, Chain of Liberation, Corrosive Flail, Dragon's Grasp, Gloves of Heroism, Hellrider's Pride, Helmet of Smiting, Hoppy, Rupturing Blade, Spellthief, The Oak Father's Embrace, The Sacred Star (Dank Crypt), Xyanyde
+
+------------------------
+
+COMING SOON
+
+■ PSION — Full psionic class currently in development.
+■ Additional subclasses and feat sources planned.
+
+------------------------
+
+LOCALIZATION
+
+■ English — built-in
+■ Spanish — built-in
+■ Korean — built-in
+■ Russian — external patch available on mod.io
+■ Chinese (Simplified) — external patch available on mod.io
+
+------------------------
+
+COMPATIBILITY
+
+■ Standalone — no other mods required.
+■ Install via the in-game BG3 Mod Manager.
+■ Not compatible with saves from before major version updates.
+■ May conflict with other class or feat overhaul mods.
+
+------------------------
+
+CREDITS
+
+Original mod: Yoonmoonsik
+Spanish localization: (tu nombre aqui)
+GitHub: github.com/Yoonmoonsik/dnd55e
+
+If you enjoy this mod, please rate it. It helps the author continue development.

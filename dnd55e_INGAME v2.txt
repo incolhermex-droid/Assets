@@ -1,0 +1,94 @@
+D&D 5.5e ALL-IN-ONE BEYOND — THE WORLD UPDATE
+
+Baldur's Gate 3 was built on D&D 2014 rules. This mod updates the entire game to the official 2024 Player's Handbook (5.5e).
+
+■ Every base class fully rebuilt from the ground up
+■ Three brand new full classes added (Gunslinger, Illrigger, Artificer)
+■ 80+ feats from five different sourcebooks
+■ Reworked races and 37 backgrounds with Origin Feats
+■ 60+ new and revised spells
+■ New weapons, items and unique loot
+■ All in one standalone mod — no dependencies required
+
+────────────────────────
+
+CORE RULES — MAJOR CHANGES
+
+■ Bloodied Condition: Creatures at or below 50% HP become Bloodied. Many abilities interact with this state.
+■ Heavy Armor: Requires Strength 13 to move effectively.
+■ One Spell Slot per Turn: No more double-casting with Action + Bonus Action.
+■ Weapon Drawing: Equip or draw weapons as part of your Attack action.
+■ Prone Rework: Standing up costs half your Speed.
+■ Extra Attack + War Magic support for certain classes.
+■ Heavy Weapon Ability Requirements added.
+
+────────────────────────
+
+CLASS OVERHAUL — 12 BASE CLASSES
+
+All subclasses now unlock at Level 3.
+
+Barbarian – Primal Knowledge, Brutal Strike, Instinctive Pounce
+Bard – Font of Inspiration, reworked Magical Secrets
+Cleric – Divine Order, Sear Undead, Blessed Strikes
+Druid – Primal Order, Wild Resurgence, Elemental Fury
+Fighter – Tactical Mind, Tactical Shift, Tactical Master
+Monk – Monk's Focus (replaces Ki), Deflect Attacks
+Paladin – Divine Smite as a prepared spell, Faithful Steed
+Ranger – Reworked Favored Enemy, Deft Explorer
+Rogue – Cunning Strike & Improved Cunning Strike
+Sorcerer – Innate Sorcery, Sorcery Incarnate
+Warlock – Invocations from Level 1 + 20+ options
+Wizard – Ritual Adept, Scholar
+
+────────────────────────
+
+NEW CLASSES
+
+GUNSLINGER
+A martial class centered on firearms and the Risk resource. High-risk, high-reward gameplay.
+Subclasses: High Roller, Spellslinger, White Hat
+
+ILLRIGGER
+Infernal knights who dominate the battlefield using a unique Seal system.
+Subclasses: Hellspeaker (Moloch), Painkiller (Dispater), Sanguine Knight (Sutekh), Shadowmaster
+
+ARTIFICER
+Masters of magical invention and item crafting.
+Subclasses: Alchemist, Armorer, Artillerist
+
+────────────────────────
+
+WEAPON MASTERY
+New tactical layer for all martial characters from Level 1.
+Properties include: Cleave, Graze, Topple, Nick, Vex, Slow, Push, Sap, Flex.
+
+────────────────────────
+
+ADDITIONAL CONTENT
+• 80+ Feats (PHB 2024, Xanathar's, Tasha's, Forgotten Realms, LOTR)
+• Reworked races + extra races via Human passive
+• 37 Backgrounds granting Origin Feats at Level 1
+• 60+ new/revised spells
+• New firearms, class-specific items and unique loot with locations
+
+────────────────────────
+
+COMING SOON
+• Psion class (full psionic class in development)
+
+LOCALIZATION
+Built-in: English · Spanish · Korean
+External patches: Russian · Chinese (Simplified)
+
+COMPATIBILITY
+• Standalone mod
+• Install via in-game BG3 Mod Manager
+• Not compatible with old saves after major updates
+• May conflict with other major class/feat overhauls
+
+CREDITS
+Original Author: Yoonmoonsik
+Spanish Localization: HermexVar (incolhermex-droid)
+
+If you enjoy the mod, please rate it and leave feedback. It really helps development!
