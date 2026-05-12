@@ -122,7 +122,7 @@ The complete **2024 Weapon Mastery** system — all properties implemented:
 | Language | Status |
 |----------|--------|
 | 🇬🇧 English | ✅ Built-in |
-| 🇪🇸 Spanish (Castilian) | ✅ | ✅ Built-in ||
+| 🇪🇸 Spanish (Castilian) | ✅ Built-in |
 | 🇲🇽 Spanish (Latin American) | ✅ Built-in |
 | 🇰🇷 Korean | ✅ Built-in |
 | 🇷🇺 Russian | 📦 [External Patch](https://mod.io/g/baldursgate3/m/dnd-55e-all-in-one-beyond-russian-localization) |
