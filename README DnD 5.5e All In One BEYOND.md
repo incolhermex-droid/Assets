@@ -151,8 +151,8 @@ The complete **2024 Weapon Mastery** system — all properties implemented:
 | Role | Contributor |
 |------|-------------|
 | Original Mod | [Yoonmoonsik](https://github.com/Yoonmoonsik) |
-| Spanish Localization | [HermesVar](https://mod.io/g/baldursgate3/m/dnd55e) |
-| Latin American Spanish | [incolhermex-droid](https://github.com/incolhermex-droid) |
+| Spanish Localization | [HermesVar](https://github.com/incolhermex-droid) |
+| English Localization | [Shiina18](https://github.com/Shiina18) |
 
 ---
 
