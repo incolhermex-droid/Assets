@@ -134,7 +134,7 @@ The complete **2024 Weapon Mastery** system — all properties implemented:
 
 - **Install via:** BG3 Mod Manager (in-game)
 - **Standalone:** No other mods required
-- ⚠ **Not compatible** with saves from before a major version update
+- ⚠ **Not compatible** with saves from before a major version update (4.X)
 - ⚠ **May conflict** with other class or feat overhaul mods
 
 ---
