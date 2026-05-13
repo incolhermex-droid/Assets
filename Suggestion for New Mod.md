@@ -13,7 +13,7 @@ Philosophy:
 
 - Difficulty through **tactical intelligence**, and better HP (HP PLUS).
 - **Multiplayer stability**.
-- Smart scaling based on player count and Act progression.
+- Smart scaling based on player count and Act progression: More attacks, and one additional action; for example, if an enemy attacked twice, now they will attack three times and have an additional action, optionally 3 meters more movement and perhaps some extra passive ability.
 - Dual compatibility: must work with level cap 12 (vanilla) **and** with Level 20 mods.
 
 ---
