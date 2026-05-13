@@ -9,9 +9,7 @@
 
 This document outlines feature suggestions for a new Baldur's Gate 3 difficulty mod.
 
-The goal is **NOT** to replicate existing mods such as Relia's suite (Extra Encounters and Minibosses, More Enemies in Basic Fights, Enemies Reworked). While those mods are well-made, they cause multiplayer crashes — silent desktop drops with no error message — making them unviable for co-op sessions.
-
-This mod follows a different, independent philosophy:
+Philosophy:
 
 - Difficulty through **tactical intelligence**, and better HP (HP PLUS).
 - **Multiplayer stability**.
