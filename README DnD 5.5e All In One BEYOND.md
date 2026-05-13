@@ -1,6 +1,6 @@
 <div align="center">
 
-![Banner](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/banner.svg)
+![Banner](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/banner1.svg)
 
 ![Badges](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/badges.svg)
 
