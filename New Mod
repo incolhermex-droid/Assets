@@ -1,556 +1,169 @@
-const {
-  Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
-  HeadingLevel, AlignmentType, BorderStyle, WidthType, ShadingType,
-  LevelFormat, PageNumber, Footer, PageBreak
-} = require('docx');
-const fs = require('fs');
+# Baldur's Gate 3 - Difficulty Mod  
+**Design & Feature Suggestions**
 
-const ACCENT = "1A5C96";
-const ACCENT2 = "2E7D32";
-const ACCENT3 = "6A1B9A";
-const LIGHT_GRAY = "F5F5F5";
-const HEADER_BG = "1A5C96";
-const HEADER_TEXT = "FFFFFF";
-const ROW_ALT = "EEF4FB";
+**Structured Reference Document for the Mod Developer**
 
-const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC" };
-const borders = { top: border, bottom: border, left: border, right: border };
-const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
-const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
+---
 
-function h1(text) {
-  return new Paragraph({
-    heading: HeadingLevel.HEADING_1,
-    spacing: { before: 360, after: 160 },
-    children: [new TextRun({ text, font: "Arial", size: 32, bold: true, color: ACCENT })]
-  });
-}
+## 1. Overview & Philosophy
 
-function h2(text) {
-  return new Paragraph({
-    heading: HeadingLevel.HEADING_2,
-    spacing: { before: 280, after: 120 },
-    children: [new TextRun({ text, font: "Arial", size: 26, bold: true, color: "222222" })]
-  });
-}
+This document outlines feature suggestions for a new Baldur's Gate 3 difficulty mod.
 
-function h3(text, color = "333333") {
-  return new Paragraph({
-    spacing: { before: 200, after: 80 },
-    children: [new TextRun({ text, font: "Arial", size: 22, bold: true, color })]
-  });
-}
+The goal is **NOT** to replicate existing mods such as Relia's suite (Extra Encounters and Minibosses, More Enemies in Basic Fights, Enemies Reworked). While those mods are well-made, they cause multiplayer crashes — silent desktop drops with no error message — making them unviable for co-op sessions.
 
-function body(text) {
-  return new Paragraph({
-    spacing: { before: 60, after: 60 },
-    children: [new TextRun({ text, font: "Arial", size: 22, color: "222222" })]
-  });
-}
+This mod follows a different, independent philosophy:
 
-function note(text) {
-  return new Paragraph({
-    spacing: { before: 60, after: 80 },
-    indent: { left: 360 },
-    children: [new TextRun({ text: `⚑ ${text}`, font: "Arial", size: 20, color: "666666", italics: true })]
-  });
-}
+- Difficulty through **tactical intelligence**, not inflated HP or raw quantity.
+- **Multiplayer stability** as a non-negotiable design constraint.
+- Smart scaling based on player count and Act progression.
+- Dual compatibility: must work with level cap 12 (vanilla) **and** with Level 20 mods.
 
-function bullet(text, ref = "bullets") {
-  return new Paragraph({
-    numbering: { reference: ref, level: 0 },
-    spacing: { before: 40, after: 40 },
-    children: [new TextRun({ text, font: "Arial", size: 22, color: "222222" })]
-  });
-}
+---
 
-function spacer() {
-  return new Paragraph({ spacing: { before: 80, after: 80 }, children: [new TextRun("")] });
-}
+## 2. Core Design Constraint: Multiplayer Stability
 
-function divider() {
-  return new Paragraph({
-    spacing: { before: 120, after: 120 },
-    border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: "DDDDDD", space: 1 } },
-    children: [new TextRun("")]
-  });
-}
+This is the single most important technical requirement. The mod must be designed from the ground up to avoid the crash pattern seen in other mods.
 
-function badge(text, color) {
-  return new TextRun({ text: `  [${text}]  `, font: "Arial", size: 18, bold: true, color, shading: undefined });
-}
+### Known crash triggers to avoid:
+- Modifying `CombatGroupID` after a character has already died in the current combat.
+- Adding or removing enemies mid-combat via script (all enemy placement must happen before combat initiation).
+- Duplicate NPC spawns caused by conflicting faction tags.
+- Changes to enemy stats or spells that fire as passive triggers during another player's turn in multiplayer.
 
-function sectionCard(title, phaseLabel, phaseColor, bodyText, noteText = null, bullets = []) {
-  const children = [
-    new Paragraph({
-      spacing: { before: 160, after: 80 },
-      children: [
-        new TextRun({ text: title, font: "Arial", size: 24, bold: true, color: "111111" }),
-        new TextRun({ text: "   " }),
-        badge(phaseLabel, phaseColor)
-      ]
-    }),
-    new Paragraph({
-      spacing: { before: 60, after: 60 },
-      children: [new TextRun({ text: bodyText, font: "Arial", size: 21, color: "333333" })]
-    })
-  ];
-  if (bullets.length) {
-    bullets.forEach(b => children.push(
-      new Paragraph({
-        numbering: { reference: "bullets", level: 0 },
-        spacing: { before: 30, after: 30 },
-        children: [new TextRun({ text: b, font: "Arial", size: 21, color: "333333" })]
-      })
-    ));
-  }
-  if (noteText) {
-    children.push(new Paragraph({
-      spacing: { before: 60, after: 60 },
-      indent: { left: 300 },
-      children: [new TextRun({ text: `Note: ${noteText}`, font: "Arial", size: 19, color: "777777", italics: true })]
-    }));
-  }
-  return children;
-}
+### Recommended practices:
+- All encounter modifications (extra enemies, stat changes, passive additions) are set at scene load, not at combat start.
+- Test every encounter change in both 2-player and 4-player sessions before release.
+- Document which game files each change touches and whether the change is safe in a multiplayer context.
 
-const doc = new Document({
-  numbering: {
-    config: [
-      {
-        reference: "bullets",
-        levels: [{
-          level: 0, format: LevelFormat.BULLET, text: "\u2022", alignment: AlignmentType.LEFT,
-          style: { paragraph: { indent: { left: 600, hanging: 300 } } }
-        }]
-      }
-    ]
-  },
-  styles: {
-    default: { document: { run: { font: "Arial", size: 22 } } },
-    paragraphStyles: [
-      { id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
-        run: { size: 32, bold: true, font: "Arial" },
-        paragraph: { spacing: { before: 360, after: 160 }, outlineLevel: 0 } },
-      { id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true,
-        run: { size: 26, bold: true, font: "Arial" },
-        paragraph: { spacing: { before: 280, after: 120 }, outlineLevel: 1 } }
-    ]
-  },
-  sections: [{
-    properties: {
-      page: {
-        size: { width: 12240, height: 15840 },
-        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
-      }
-    },
-    footers: {
-      default: new Footer({
-        children: [new Paragraph({
-          alignment: AlignmentType.CENTER,
-          children: [
-            new TextRun({ text: "BG3 Difficulty Mod — Suggestions Document   |   Page ", font: "Arial", size: 18, color: "888888" }),
-            new TextRun({ children: [PageNumber.CURRENT], font: "Arial", size: 18, color: "888888" })
-          ]
-        })]
-      })
-    },
-    children: [
+---
 
-      // ─── COVER ────────────────────────────────────────────────
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        spacing: { before: 480, after: 80 },
-        children: [new TextRun({ text: "BALDUR'S GATE 3", font: "Arial", size: 48, bold: true, color: ACCENT })]
-      }),
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        spacing: { before: 0, after: 60 },
-        children: [new TextRun({ text: "Difficulty Mod — Design & Feature Suggestions", font: "Arial", size: 32, bold: false, color: "444444" })]
-      }),
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        spacing: { before: 60, after: 480 },
-        children: [new TextRun({ text: "A structured reference document for the mod developer", font: "Arial", size: 22, italics: true, color: "888888" })]
-      }),
+## 3. Phase 1 — Core Features
 
-      divider(),
+These are the essential features the mod cannot ship without.
 
-      // ─── INTRO ────────────────────────────────────────────────
-      h1("1. Overview & Philosophy"),
-      body("This document outlines feature suggestions for a new Baldur's Gate 3 difficulty mod. The goal is NOT to replicate existing mods such as Relia's suite (Extra Encounters and Minibosses, More Enemies in Basic Fights, Enemies Reworked). Those mods are well-made but cause multiplayer crashes — silent desktop drops with no error message — making them unviable for co-op sessions."),
-      spacer(),
-      body("This mod takes a different, independent philosophy:"),
-      bullet("Difficulty through tactical intelligence, not inflated HP or raw quantity."),
-      bullet("Stable multiplayer as a non-negotiable design constraint — any feature that risks mid-combat desync or crash gets cut or deferred."),
-      bullet("Smart scaling based on player count and Act progression, not blind global multipliers."),
-      bullet("Dual compatibility: must work with level cap at 12 (vanilla) AND with Level 20 mods."),
-      spacer(),
+### 3.1 Dynamic Player-Count Scaling (CORE)
+The mod detects the number of players in the session and adjusts grunt enemy count per encounter accordingly.
 
-      // ─── MULTIPLAYER STABILITY ────────────────────────────────
-      divider(),
-      h1("2. Core Design Constraint: Multiplayer Stability"),
-      body("This is the single most important technical requirement. The mod must be designed from the ground up to avoid the crash pattern seen in Relia's mods."),
-      spacer(),
-      h3("Known crash triggers to avoid:", "B71C1C"),
-      bullet("Modifying CombatGroupID after a character has already died in the current combat."),
-      bullet("Adding or removing enemies mid-combat via script (all enemy placement must happen before combat initiation)."),
-      bullet("Duplicate NPC spawns caused by conflicting faction tags."),
-      bullet("Changes to enemy stats or spells that fire as passive triggers during another player's turn in multiplayer."),
-      spacer(),
-      h3("Recommended practice:", ACCENT2),
-      bullet("All encounter modifications (extra enemies, stat changes, passive additions) are set at scene load, not at combat start."),
-      bullet("Test every encounter change in a 2-player and 4-player session before release."),
-      bullet("Document which game files each change touches and whether the change is safe in multiplayer context."),
-      spacer(),
+- 1 player: vanilla count, or slight increase (+1 on select hard fights).
+- 2 players: +15–20% enemies per encounter.
+- 3–4 players: +30–40% enemies per encounter.
+- Scaling applies only to grunt-tier enemies. Minibosses and bosses are never quantity-scaled.
+- Applied at scene load. No mid-combat spawning.
 
-      // ─── PHASE 1 ──────────────────────────────────────────────
-      divider(),
-      h1("3. Phase 1 — Core Features"),
-      body("These are the essential features the mod cannot ship without."),
-      spacer(),
+### 3.2 Act-by-Act Progression Scaling (CORE)
+Difficulty increases progressively across Acts, with values set per encounter — not a global flat multiplier.
 
-      ...sectionCard(
-        "3.1 Dynamic Player-Count Scaling",
-        "CORE", ACCENT,
-        "The mod detects the number of players in the session and adjusts grunt enemy count per encounter accordingly. This is the central differentiator from existing mods.",
-        "This applies only to grunt-tier enemies. Minibosses and bosses are never quantity-scaled.",
-        [
-          "1 player: vanilla count, or slight increase (+1 on select hard fights).",
-          "2 players: +15–20% enemies per encounter.",
-          "3–4 players: +30–40% enemies per encounter.",
-          "Scaling is applied at scene load. No mid-combat spawning."
-        ]
-      ),
+- **Act 1**: subtle adjustments.
+- **Act 2**: moderate tactical pressure.
+- **Act 3**: high difficulty.
 
-      spacer(),
-      ...sectionCard(
-        "3.2 Act-by-Act Progression Scaling",
-        "CORE", ACCENT,
-        "Difficulty increases progressively across Acts, with values set per encounter — not a global flat multiplier. Each Act has a different intensity profile.",
-        "Act 1 changes should feel subtle. Act 3 changes should feel earned, not punishing.",
-        [
-          "Act 1: minor adjustments — small enemy count increases, 1 new passive per enemy type.",
-          "Act 2: moderate tactical pressure — extra elites, improved AI behavior, expanded spell pools.",
-          "Act 3: high difficulty — full faction profiles active, toughest encounter-specific tuning."
-        ]
-      ),
+### 3.3 Faction-Based AI Profiles (CORE)
+Each major faction receives a defined tactical profile that guides how enemies prioritize targets and use their abilities.
 
-      spacer(),
-      ...sectionCard(
-        "3.3 Faction-Based AI Profiles",
-        "CORE", ACCENT,
-        "Each major faction receives a defined tactical profile that guides how enemies prioritize targets and use their abilities. This makes encounters feel intentional rather than chaotic.",
-        null,
-        [
-          "Goblins: swarm tactics, prefer weakened targets, use terrain when possible.",
-          "Githyanki: aggressive flanking, focus fire on the squishiest character.",
-          "Undead: relentless pressure, never break, prioritize characters that deal radiant damage.",
-          "Cult of the Absolute / Mind Flayer thralls: crowd control priority, protect the caster.",
-          "Drow: hit-and-hide behavior, poison-focused, target isolated party members.",
-          "Absolute cultists: shield casters, aggressive self-sacrifice behavior for named leaders."
-        ]
-      ),
+**Examples:**
+- Goblins: swarm tactics, prefer weakened targets.
+- Githyanki: aggressive flanking, focus fire on squishy targets.
+- Undead: relentless pressure, prioritize radiant damage dealers.
+- Drow: hit-and-hide, poison-focused.
+- Absolute cultists: protect casters, self-sacrifice for leaders.
 
-      spacer(),
-      ...sectionCard(
-        "3.4 Focus Fire Action (Ketheric-Style)",
-        "CORE", ACCENT,
-        "Assign a 'Focus Target' action to selected enemy commanders and elites. When used, all nearby allied enemies switch their priority target to the designated party member for 1–2 turns. This replicates Ketheric Thorne's most impactful mechanic at a smaller scale.",
-        "This is a high-impact, low-complexity feature — the action already exists in the game's asset library. The challenge is assigning it to the right enemies and tuning the cooldown so it doesn't trigger every round.",
-        [
-          "Eligible enemies: faction commanders, named elites, unique minibosses.",
-          "Cooldown: 2–3 rounds to prevent it from becoming an instant-wipe.",
-          "Target priority logic: focus the party member with the lowest HP, or the one currently concentrating on a spell.",
-          "Visual indicator: use existing Ketheric VFX or a simple status icon so the player can react.",
-          "Grunts do NOT get this action — only leaders and elites."
-        ]
-      ),
+### 3.4 Focus Fire Action (Ketheric-Style) (CORE)
+Assign a "Focus Target" action to selected enemy commanders and elites. When used, nearby allies switch priority to the designated party member for 1–2 turns.
 
-      spacer(),
-      ...sectionCard(
-        "3.5 Expanded Enemy Toolkit (Spells & Passives)",
-        "CORE", ACCENT,
-        "Enemies receive additional spells, actions, and passive buffs that are thematically coherent with their type. No random spell assignment. Every ability must make narrative sense for that enemy.",
-        "Prioritize crowd control and debuffs over raw damage spells. More HP sponges is not the goal — more tactical decisions for the player is.",
-        [
-          "Grunts receive 1–2 new abilities max.",
-          "Elites receive 2–3 abilities, including at least one that forces the player to reposition.",
-          "All spells sourced from the SRD 5e ruleset where possible, for consistency with the base game.",
-          "Passive buffs (e.g., Reckless Attack, Pack Tactics, Sentinel) are preferred over active spells for grunts."
-        ]
-      ),
+### 3.5 Expanded Enemy Toolkit (Spells & Passives) (CORE)
+Enemies receive additional spells, actions, and passive buffs that are thematically coherent. Prioritize crowd control and debuffs over raw damage.
 
-      spacer(),
-      // ─── PHASE 2 ──────────────────────────────────────────────
-      divider(),
-      h1("4. Phase 2 — Tactical Depth"),
-      body("These features expand the mod's depth after the core is stable."),
-      spacer(),
+---
 
-      ...sectionCard(
-        "4.1 Combat Role System Within Enemy Groups",
-        "PHASE 2", ACCENT3,
-        "Each enemy encounter is assigned a composition with defined roles: Tank, DPS, Support, Control. When player-count scaling adds enemies, the system fills missing roles first before adding more generic grunts.",
-        null,
-        [
-          "Tank: blocks chokepoints, draws attacks, has high AC or temp HP.",
-          "DPS: focus fires on the lowest-HP party member.",
-          "Support: buffs allies or applies Bless/Bane equivalents.",
-          "Control: uses push, restrain, slow, or frighten to disrupt the party."
-        ]
-      ),
+## 4. Phase 2 — Tactical Depth
 
-      spacer(),
-      ...sectionCard(
-        "4.2 Enemy Reaction to Player Concentration",
-        "PHASE 2", ACCENT3,
-        "Enemies with improved AI will recognize when a party member is maintaining Concentration on a spell and will prioritize breaking it. This is a small code change with enormous tactical impact.",
-        "This should be an AI behavior rule, not a guaranteed action every turn — otherwise it trivializes certain builds.",
-        [
-          "Elites and commanders target Concentration holders with melee attacks when in range.",
-          "Ranged enemies that can't reach a caster switch to ranged attacks against them.",
-          "Summoned creatures are deliberately deprioritized — enemies focus the 'real' party members instead."
-        ]
-      ),
+### 4.1 Combat Role System Within Enemy Groups
+When scaling adds enemies, the system prioritizes filling defined roles (Tank, DPS, Support, Control) before adding generic grunts.
 
-      spacer(),
-      ...sectionCard(
-        "4.3 XP Normalization",
-        "PHASE 2", ACCENT3,
-        "Adding enemies increases XP rewards. Without adjustment, players will overlevel relative to the intended Act progression. This addon normalizes XP so the extra enemies represent resource drain, not an express lane to max level.",
-        "This is especially important for vanilla (level cap 12) playthroughs. Level 20 mod users may choose to disable XP normalization.",
-        [
-          "XP per extra enemy set to 50–60% of vanilla value.",
-          "Named elites and commanders retain full XP — they are intentional challenges.",
-          "Configuration flag for Level 20 mod users to disable normalization independently."
-        ]
-      ),
+### 4.2 Enemy Reaction to Player Concentration
+Improved AI will recognize and prioritize breaking concentration on spells.
 
-      spacer(),
-      ...sectionCard(
-        "4.4 Narrative Combat Protection",
-        "PHASE 2", ACCENT3,
-        "Certain fights have narrative weight and cinematic staging that must not be disrupted by quantity scaling. These encounters are flagged as protected — they receive quality improvements (AI, abilities) but no enemy count changes.",
-        null,
-        [
-          "Protected encounters: Raphael (Act 3), Cazador, Ketheric Thorne (both phases), Orin, Lorroakan.",
-          "These fights receive expanded ability sets and improved AI instead of more bodies.",
-          "Boss phases and legendary actions remain untouched unless specifically designed for."
-        ]
-      ),
+### 4.3 XP Normalization
+Reduce XP gained from extra enemies to prevent over-leveling (especially important for vanilla level 12 playthroughs).
 
-      spacer(),
-      ...sectionCard(
-        "4.5 Proportional Loot Adjustment",
-        "PHASE 2", ACCENT3,
-        "Harder encounters should feel rewarding. When a fight is made more difficult, the enemy drops are adjusted to include a small number of additional consumables — not rare items, but enough to recover resources spent.",
-        "This must not break the gold or item economy. Suggested additions: healing potions, arrows, basic grenades, scrolls.",
-        [
-          "Extra enemies drop consumables at 60% vanilla rate (not full loot tables).",
-          "Named elites and minibosses may drop a minor unique item (to be defined per encounter).",
-          "No gold multiplication — the economy must stay intact."
-        ]
-      ),
+### 4.4 Narrative Combat Protection
+Key story bosses (Raphael, Cazador, Ketheric, Orin, etc.) receive no quantity scaling — only quality improvements (AI + abilities).
 
-      spacer(),
-      // ─── PHASE 3 ──────────────────────────────────────────────
-      divider(),
-      h1("5. Phase 3 — New Content (Future)"),
-      body("These are the most complex features and should be tackled only once the core is stable and tested."),
-      spacer(),
+### 4.5 Proportional Loot Adjustment
+Harder encounters drop extra consumables (potions, scrolls, arrows) to compensate for increased resource drain.
 
-      ...sectionCard(
-        "5.1 Minibosses with Unique Mechanics",
-        "FUTURE", "555555",
-        "New minibosses that have a defining mechanic, not just extra HP. One per major map zone. Each should change how the fight feels from the first round.",
-        null,
-        [
-          "Mechanic examples: phase transition at 50% HP, an aura that applies a status while active, a summon that must be killed first.",
-          "One unique miniboss per major zone: Wilderness, Underdark, Moonrise Towers, Lower City, House of Hope.",
-          "Each miniboss drops a minor unique item as reward."
-        ]
-      ),
+---
 
-      spacer(),
-      ...sectionCard(
-        "5.2 New Optional Encounters in Underused Zones",
-        "FUTURE", "555555",
-        "Identify areas where the player moves through without combat pressure — particularly transition zones in Act 2 and sections of the Underdark — and add optional encounters that feel lore-appropriate.",
-        "These should be opt-in encounters (triggered by exploration) not forced ambushes.",
-        []
-      ),
+## 5. Phase 3 — New Content (Future)
 
-      spacer(),
-      ...sectionCard(
-        "5.3 Recurring Scaled Enemy Across Acts",
-        "FUTURE", "555555",
-        "A named enemy (or enemy type) appears in all three Acts with progressively more powerful versions. Their third appearance is a full miniboss fight.",
-        "Inspired by the 'Extra Encounters' concept but with identity and narrative continuity.",
-        [
-          "Act 1: standard elite-tier encounter.",
-          "Act 2: returns with expanded abilities, references the previous encounter if possible.",
-          "Act 3: full miniboss with a unique mechanic and loot reward."
-        ]
-      ),
+### 5.1 Minibosses with Unique Mechanics
+One unique miniboss per major zone with distinctive mechanics (phase transitions, auras, priority summons, etc.).
 
-      spacer(),
-      // ─── EASY-WIN SUGGESTIONS ────────────────────────────────
-      divider(),
-      h1("6. High-Impact / Low-Effort Suggestions"),
-      body("The following suggestions are easy to implement in the BG3 Toolkit but deliver significant difficulty impact. These are strongly recommended as quick wins."),
-      spacer(),
+### 5.2 New Optional Encounters
+Add optional, lore-appropriate encounters in underused transition zones.
 
-      ...sectionCard(
-        "6.1 Boss Turn-1 Resistance Phase",
-        "QUICK WIN", ACCENT2,
-        "On their first turn, major bosses have a passive that reduces all incoming damage to 25% of its normal value. This effect expires at the start of their second turn. The intent is to discourage round-1 nova bursts and force the player to play through the opening of the fight rather than cheese it from turn 1.",
-        "Implementation: add a passive status effect (set as a pre-combat buff) with a SpellRoll or StatusDuration of 1 turn and a DamageMultiplier of 0.25. Remove on turn start via StatusEvent. Very low complexity in Toolkit.",
-        [
-          "Applies to: Raphael, Cazador, Ketheric (second phase), Orin, Lorroakan, optional minibosses.",
-          "Duration: 1 full turn only. Non-renewable — cannot be reapplied.",
-          "Visual: add a distinct visual effect so the player understands what is happening (glowing shield aura, existing VFX from the asset library).",
-          "Does NOT apply to regular elites or grunts — boss encounters only."
-        ]
-      ),
+### 5.3 Recurring Scaled Enemy Across Acts
+A named enemy (or enemy type) that returns in all three Acts, becoming progressively stronger and culminating as a miniboss in Act 3.
 
-      spacer(),
-      ...sectionCard(
-        "6.2 Pack Tactics Passive on Grunts",
-        "QUICK WIN", ACCENT2,
-        "Assign Pack Tactics (advantage on attack rolls when an ally is adjacent to the target) to goblin and kobold grunt enemies. Already exists in the game — just needs assigning. Immediately makes groupfights feel more dangerous without adding a single enemy.",
-        "One passive, massive feel difference. Grunts suddenly need to be spread out and kited, which changes positioning completely.",
-        []
-      ),
+---
 
-      spacer(),
-      ...sectionCard(
-        "6.3 Pre-Cast Buffs on Caster Enemies",
-        "QUICK WIN", ACCENT2,
-        "Enemy spellcasters (priests, mages, cultist leaders) enter combat with 1 pre-cast buff already active — Mage Armor, Bless, Shillelagh, etc., depending on their type. This eliminates the 'wasted first turn' pattern where enemy casters just cast Mage Armor on turn 1 and do nothing offensive.",
-        "Set as a StatusEffect applied at scene load. Zero combat complexity, big behavioral improvement.",
-        [
-          "Mages/Warlocks: Mage Armor pre-cast.",
-          "Priests/Clerics: Bless pre-cast on themselves and one ally.",
-          "Druids: Shillelagh or Barkskin pre-cast.",
-          "Necromancers: False Life pre-cast."
-        ]
-      ),
+## 6. High-Impact / Low-Effort Suggestions (Quick Wins)
 
-      spacer(),
-      ...sectionCard(
-        "6.4 Sentinel Passive on Front-Line Elites",
-        "QUICK WIN", ACCENT2,
-        "Give Sentinel (opportunity attacks reduce speed to 0, can attack even if target disengages) to elite melee enemies such as Githyanki Warriors, Gnoll Hunters, and Duergar Overseers. Forces the party to think twice about disengaging from melee, which is currently trivial.",
-        "Already a feat in the game system — just assign it. Creates chokepoint scenarios that reward positioning and punish careless movement.",
-        []
-      ),
+### 6.1 Boss Turn-1 Resistance Phase
+Major bosses take only 25% damage on their first turn (expires at start of turn 2). Prevents round-1 nova cheese.
 
-      spacer(),
-      ...sectionCard(
-        "6.5 Aura-Based Buff for Enemy Leaders",
-        "QUICK WIN", ACCENT2,
-        "Enemy commanders (goblin warlords, githyanki commanders, duergar captains) emit a small radius aura (3m) that grants their nearby allies +1 to attack rolls or temporary HP at the start of each round. Killing the leader removes the aura — incentivizes the player to identify and focus the priority target.",
-        "Auras are easy to assign in Toolkit via StatusEffect with AreaRadius and a recurring SpellRoll. Adds a layer of strategic priority without changing any combat math globally.",
-        []
-      ),
+### 6.2 Pack Tactics Passive on Grunts
+Give Pack Tactics to goblin, kobold, and similar grunt enemies.
 
-      spacer(),
-      ...sectionCard(
-        "6.6 Level 20 Mod Compatibility Flag",
-        "QUICK WIN", ACCENT2,
-        "Add a simple configuration flag (readable on mod load) that detects whether a Level 20 mod is active and adjusts the mod's scaling ceiling accordingly.",
-        null,
-        [
-          "Without Level 20 mod (cap 12): scaling stops at Act 3 base values.",
-          "With Level 20 mod: Act 3 values are increased by an additional tier to maintain challenge at higher levels.",
-          "XP normalization behavior also adjusts based on this flag.",
-          "This should be a passive detection, not a manual player config — reduces setup friction."
-        ]
-      ),
+### 6.3 Pre-Cast Buffs on Caster Enemies
+Enemy casters enter combat with Mage Armor, Bless, Barkskin, etc. already active.
 
-      spacer(),
-      // ─── OPTIONAL TOGGLE ──────────────────────────────────────
-      divider(),
-      h1("7. Optional: Host Toggle"),
-      body("A simple host-accessible toggle (in-game or via config file) that allows disabling player-count scaling and running the mod in a 'quality only' mode. This way, solo players or groups that prefer the AI improvements without quantity increases can still benefit from the mod."),
-      spacer(),
-      bullet("Mode A (default): Full mod active — scaling by player count, faction AI profiles, expanded toolkits."),
-      bullet("Mode B (quality only): No quantity scaling. Only AI behavior improvements, pre-cast buffs, faction profiles, and boss mechanics are active."),
-      bullet("Mode selection applies to the full session. Only the host can change it."),
-      spacer(),
+### 6.4 Sentinel Passive on Front-Line Elites
+Gives opportunity attacks that reduce speed to 0 even on disengage.
 
-      // ─── CLOSING ──────────────────────────────────────────────
-      divider(),
-      h1("8. Summary Table"),
-      body("Priority reference for the developer:"),
-      spacer(),
+### 6.5 Aura-Based Buff for Enemy Leaders
+Commanders emit a small aura granting +1 to attacks or temporary HP to nearby allies.
 
-      new Table({
-        width: { size: 9360, type: WidthType.DXA },
-        columnWidths: [3800, 2200, 1680, 1680],
-        rows: [
-          new TableRow({
-            tableHeader: true,
-            children: [
-              "Feature", "Phase", "Complexity", "Impact"
-            ].map(text => new TableCell({
-              borders,
-              width: { size: text === "Feature" ? 3800 : text === "Phase" ? 2200 : 1680, type: WidthType.DXA },
-              shading: { fill: HEADER_BG, type: ShadingType.CLEAR },
-              margins: { top: 80, bottom: 80, left: 120, right: 120 },
-              children: [new Paragraph({ children: [new TextRun({ text, font: "Arial", size: 20, bold: true, color: HEADER_TEXT })] })]
-            }))
-          }),
-          ...[
-            ["Player-count scaling", "Phase 1 — Core", "Medium", "Very High"],
-            ["Act-by-Act progression", "Phase 1 — Core", "Medium", "Very High"],
-            ["Faction AI profiles", "Phase 1 — Core", "Medium", "High"],
-            ["Focus Fire action", "Phase 1 — Core", "Low", "Very High"],
-            ["Expanded enemy toolkit", "Phase 1 — Core", "Medium", "High"],
-            ["Combat role system", "Phase 2", "Medium", "High"],
-            ["Concentration targeting AI", "Phase 2", "Low", "High"],
-            ["XP normalization", "Phase 2", "Low", "Medium"],
-            ["Narrative fight protection", "Phase 2", "Low", "High"],
-            ["Loot adjustment", "Phase 2", "Low", "Medium"],
-            ["Boss Turn-1 Resistance", "Quick Win", "Very Low", "Very High"],
-            ["Pack Tactics on grunts", "Quick Win", "Very Low", "High"],
-            ["Pre-cast buffs on casters", "Quick Win", "Very Low", "High"],
-            ["Sentinel on front-line elites", "Quick Win", "Very Low", "High"],
-            ["Leader aura buff", "Quick Win", "Low", "High"],
-            ["Level 20 compatibility flag", "Quick Win", "Low", "High"],
-            ["Minibosses w/ unique mechanics", "Phase 3 — Future", "High", "Very High"],
-            ["New optional encounters", "Phase 3 — Future", "High", "High"],
-            ["Recurring scaled enemy", "Phase 3 — Future", "High", "High"],
-          ].map((row, i) => new TableRow({
-            children: row.map((text, ci) => new TableCell({
-              borders,
-              width: { size: ci === 0 ? 3800 : ci === 1 ? 2200 : 1680, type: WidthType.DXA },
-              shading: { fill: i % 2 === 0 ? "FFFFFF" : ROW_ALT, type: ShadingType.CLEAR },
-              margins: { top: 60, bottom: 60, left: 120, right: 120 },
-              children: [new Paragraph({ children: [new TextRun({ text, font: "Arial", size: 19, color: "222222" })] })]
-            }))
-          }))
-        ]
-      }),
+### 6.6 Level 20 Mod Compatibility Flag
+Automatic detection of Level 20 mods to adjust scaling and XP behavior accordingly.
 
-      spacer(),
-      divider(),
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        spacing: { before: 200, after: 60 },
-        children: [new TextRun({ text: "End of suggestions document.", font: "Arial", size: 20, italics: true, color: "888888" })]
-      }),
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        spacing: { before: 0, after: 0 },
-        children: [new TextRun({ text: "Questions or clarifications can be directed to the requester.", font: "Arial", size: 20, italics: true, color: "888888" })]
-      }),
-    ]
-  }]
-});
+---
 
-Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("/mnt/user-data/outputs/BG3_Difficulty_Mod_Suggestions.docx", buffer);
-  console.log("Done.");
-});
+## 7. Optional: Host Toggle
+
+Implement a toggle (accessible by the host) with two modes:
+
+- **Mode A (Default)**: Full mod — player-count scaling + all features.
+- **Mode B (Quality Only)**: No quantity scaling. Only AI improvements, passives, pre-cast buffs, and boss mechanics.
+
+---
+
+## 8. Summary Table
+
+| Feature                          | Phase              | Complexity  | Impact      |
+|----------------------------------|--------------------|-------------|-------------|
+| Player-count scaling             | Phase 1 — Core     | Medium      | Very High   |
+| Act-by-Act progression           | Phase 1 — Core     | Medium      | Very High   |
+| Faction AI profiles              | Phase 1 — Core     | Medium      | High        |
+| Focus Fire action                | Phase 1 — Core     | Low         | Very High   |
+| Expanded enemy toolkit           | Phase 1 — Core     | Medium      | High        |
+| Combat role system               | Phase 2            | Medium      | High        |
+| Concentration targeting AI       | Phase 2            | Low         | High        |
+| XP normalization                 | Phase 2            | Low         | Medium      |
+| Narrative fight protection       | Phase 2            | Low         | High        |
+| Loot adjustment                  | Phase 2            | Low         | Medium      |
+| Boss Turn-1 Resistance           | Quick Win          | Very Low    | Very High   |
+| Pack Tactics on grunts           | Quick Win          | Very Low    | High        |
+| Pre-cast buffs on casters        | Quick Win          | Very Low    | High        |
+| Sentinel on elites               | Quick Win          | Very Low    | High        |
+| Leader aura buff                 | Quick Win          | Low         | High        |
+| Level 20 compatibility flag      | Quick Win          | Low         | High        |
+| Minibosses w/ unique mechanics   | Phase 3 — Future   | High        | Very High   |
+| New optional encounters          | Phase 3 — Future   | High        | High        |
+| Recurring scaled enemy           | Phase 3 — Future   | High        | High        |
+
+---
+
+**End of suggestions document.**
+
+Questions or clarifications can be directed to the requester.
