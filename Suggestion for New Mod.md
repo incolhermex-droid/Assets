@@ -29,7 +29,6 @@ The mod detects the number of players in the session and adjusts grunt enemy cou
 - 2 players: +15–20% enemies per encounter.
 - 3–4 players: +30–40% enemies per encounter.
 - Scaling applies only to grunt-tier enemies. Minibosses and bosses are never quantity-scaled.
-- Applied at scene load. No mid-combat spawning.
 
 ### 2.2 Act-by-Act Progression Scaling (CORE)
 Difficulty increases progressively across Acts, with values set per encounter — not a global flat multiplier.
