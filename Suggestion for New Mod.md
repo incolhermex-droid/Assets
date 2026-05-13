@@ -49,7 +49,7 @@ Each major faction receives a defined tactical profile that guides how enemies p
 - Absolute cultists: protect casters, self-sacrifice for leaders.
 
 ### 2.4 Focus Fire Action (Ketheric-Style) (CORE)
-Assign a "Focus Target" action to selected enemy commanders and elites. When used, nearby allies switch priority to the designated party member for 1–2 turns.
+Assign a "Focus Target" (Focus target is a Ketheric Thorm ability; it may be possible to copy and use it on multiple bosses or enemies that have groups of companions.) action to selected enemy commanders and elites. When used, nearby allies switch priority to the designated party member for 1–2 turns.
 
 ### 2.5 Expanded Enemy Toolkit (Spells & Passives) (CORE)
 Enemies receive additional spells, actions, and passive buffs that are thematically coherent. Prioritize crowd control and debuffs over raw damage.
