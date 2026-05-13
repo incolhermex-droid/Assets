@@ -1,23 +1,43 @@
 <svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="fadeEdge" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="white" stop-opacity="0"/>
-      <stop offset="10%" stop-color="white" stop-opacity="1"/>
-      <stop offset="90%" stop-color="white" stop-opacity="1"/>
-      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0b09"/>
+      <stop offset="50%" style="stop-color:#1a0f00"/>
+      <stop offset="100%" style="stop-color:#0d0b09"/>
     </linearGradient>
+
+    <!-- Gold gradient -->
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#7a5f2a"/>
       <stop offset="40%" style="stop-color:#e8c97a"/>
       <stop offset="60%" style="stop-color:#c9a84c"/>
       <stop offset="100%" style="stop-color:#7a5f2a"/>
     </linearGradient>
+
+    <!-- Decorative line gradient -->
     <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#0d0b09;stop-opacity:1"/>
       <stop offset="30%" style="stop-color:#c9a84c;stop-opacity:1"/>
       <stop offset="70%" style="stop-color:#c9a84c;stop-opacity:1"/>
       <stop offset="100%" style="stop-color:#0d0b09;stop-opacity:1"/>
     </linearGradient>
+
+    <!-- Edge fade transparency gradient -->
+    <linearGradient id="fadeEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="8%" stop-color="white" stop-opacity="1"/>
+      <stop offset="92%" stop-color="white" stop-opacity="1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Mask using transparency gradient -->
+    <mask id="fadeMask">
+      <rect width="900" height="200" fill="url(#fadeEdge)"/>
+    </mask>
+
+    <!-- Glow effect -->
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
@@ -25,10 +45,16 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
   </defs>
 
   <!-- Background -->
-  <rect width="900" height="200" fill="url(#bg)"/>
+  <rect
+    width="900"
+    height="200"
+    fill="url(#bg)"
+    mask="url(#fadeMask)"
+  />
 
   <!-- Decorative corner ornaments -->
   <g stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.4">
@@ -58,4 +84,5 @@
 
   <!-- Bottom rune -->
   <text x="450" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#4a3a1a" letter-spacing="6">⚔ ✦ ⚔</text>
+
 </svg>
