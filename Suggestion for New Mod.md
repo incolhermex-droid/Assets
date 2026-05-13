@@ -68,7 +68,7 @@ Improved AI will recognize and prioritize breaking concentration on spells.
 Reduce XP gained from extra enemies to prevent over-leveling (especially important for vanilla level 12 playthroughs).
 
 ### 3.4 Narrative Combat Protection
-Key story bosses (Raphael, Cazador, Ketheric, Orin, etc.) receive no quantity scaling — only quality improvements (AI + abilities).
+Key story bosses (Raphael, Cazador, Ketheric, Orin, etc.) hp scaling, more attacks (effect of the speed potion or simply extra attacks), Reduced damage on the first turn, If it casts spells, it can cast 2 instead of 1.
 
 ### 3.5 Proportional Loot Adjustment
 Harder encounters drop extra consumables (potions, scrolls, arrows) to compensate for increased resource drain.
