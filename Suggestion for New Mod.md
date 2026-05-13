@@ -59,7 +59,7 @@ Enemies receive additional spells, actions, and passive buffs that are thematica
 ## 3. Phase 2 — Tactical Depth
 
 ### 3.1 Combat Role System Within Enemy Groups
-When scaling adds enemies, the system prioritizes filling defined roles (Tank, DPS, Support, Control) before adding generic grunts.
+When scaling adds enemies, the system prioritizes filling defined roles (Tank, DPS, Support, Control) before adding generic grunts: For example, in a group of enemies, one might have more health, another has melee attack passives, another has save passives and spell difficulty class, etc
 
 ### 3.2 Enemy Reaction to Player Concentration
 Improved AI will recognize and prioritize breaking concentration on spells.
