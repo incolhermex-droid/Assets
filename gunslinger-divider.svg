@@ -1,0 +1,15 @@
+<svg width="900" height="24" viewBox="0 0 900 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a0805;stop-opacity:1"/>
+      <stop offset="20%" style="stop-color:#b5651d;stop-opacity:0.7"/>
+      <stop offset="50%" style="stop-color:#e8923a;stop-opacity:1"/>
+      <stop offset="80%" style="stop-color:#b5651d;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#0a0805;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="11" width="900" height="0.8" fill="url(#fade)"/>
+  <text x="450" y="16" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="12" fill="#b5651d">✦</text>
+  <text x="420" y="16" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="8" fill="#7a4010">⚙</text>
+  <text x="480" y="16" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="8" fill="#7a4010">⚙</text>
+</svg>

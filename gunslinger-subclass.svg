@@ -1,0 +1,50 @@
+<svg width="900" height="80" viewBox="0 0 900 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0805"/>
+      <stop offset="100%" style="stop-color:#160e06"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3d1a00"/>
+      <stop offset="50%" style="stop-color:#e8923a"/>
+      <stop offset="100%" style="stop-color:#3d1a00"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="80" fill="url(#bg)"/>
+
+  <!-- Divider top -->
+  <rect x="0" y="0" width="900" height="1" fill="url(#copper)" opacity="0.4"/>
+
+  <!-- High Roller -->
+  <g transform="translate(75, 15)">
+    <rect width="220" height="50" rx="4" fill="#1a0f00" stroke="#b5651d" stroke-width="0.8" stroke-opacity="0.5"/>
+    <rect width="220" height="50" rx="4" fill="#b5651d" opacity="0.05"/>
+    <text x="110" y="22" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="10" fill="#7a4010" letter-spacing="3">SUBCLASS I</text>
+    <text x="110" y="40" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="16" font-weight="bold" fill="#e8923a">🎲 High Roller</text>
+  </g>
+
+  <!-- Arrow -->
+  <text x="340" y="45" text-anchor="middle" font-family="serif" font-size="18" fill="#7a4010" opacity="0.6">·</text>
+
+  <!-- Spellslinger -->
+  <g transform="translate(340, 15)">
+    <rect width="220" height="50" rx="4" fill="#1a0f00" stroke="#b5651d" stroke-width="0.8" stroke-opacity="0.5"/>
+    <rect width="220" height="50" rx="4" fill="#b5651d" opacity="0.05"/>
+    <text x="110" y="22" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="10" fill="#7a4010" letter-spacing="3">SUBCLASS II</text>
+    <text x="110" y="40" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="16" font-weight="bold" fill="#e8923a">✨ Spellslinger</text>
+  </g>
+
+  <!-- Arrow -->
+  <text x="610" y="45" text-anchor="middle" font-family="serif" font-size="18" fill="#7a4010" opacity="0.6">·</text>
+
+  <!-- White Hat -->
+  <g transform="translate(605, 15)">
+    <rect width="220" height="50" rx="4" fill="#1a0f00" stroke="#b5651d" stroke-width="0.8" stroke-opacity="0.5"/>
+    <rect width="220" height="50" rx="4" fill="#b5651d" opacity="0.05"/>
+    <text x="110" y="22" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="10" fill="#7a4010" letter-spacing="3">SUBCLASS III</text>
+    <text x="110" y="40" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="16" font-weight="bold" fill="#e8923a">⚖ White Hat</text>
+  </g>
+
+  <!-- Divider bottom -->
+  <rect x="0" y="79" width="900" height="1" fill="url(#copper)" opacity="0.4"/>
+</svg>
