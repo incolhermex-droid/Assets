@@ -1,0 +1,52 @@
+<svg width="900" height="100" viewBox="0 0 900 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080508"/>
+      <stop offset="100%" style="stop-color:#120008"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#080508;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#8b0000;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#080508;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="100" fill="url(#bg)"/>
+  <rect x="0" y="0" width="900" height="1" fill="url(#fade)" opacity="0.6"/>
+  <rect x="0" y="99" width="900" height="1" fill="url(#fade)" opacity="0.6"/>
+
+  <!-- Hellspeaker -->
+  <g transform="translate(15,15)">
+    <rect width="195" height="70" rx="3" fill="#120008" stroke="#8b0000" stroke-width="0.7" stroke-opacity="0.6"/>
+    <rect width="195" height="70" rx="3" fill="#8b0000" opacity="0.04"/>
+    <text x="97" y="28" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" letter-spacing="3">SUBCLASS I</text>
+    <text x="97" y="48" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="17" font-weight="bold" fill="#cc1a1a">🗣 Hellspeaker</text>
+    <text x="97" y="62" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" font-style="italic">Words cut deeper than blades</text>
+  </g>
+
+  <!-- Painkiller -->
+  <g transform="translate(225,15)">
+    <rect width="195" height="70" rx="3" fill="#120008" stroke="#8b0000" stroke-width="0.7" stroke-opacity="0.6"/>
+    <rect width="195" height="70" rx="3" fill="#8b0000" opacity="0.04"/>
+    <text x="97" y="28" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" letter-spacing="3">SUBCLASS II</text>
+    <text x="97" y="48" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="17" font-weight="bold" fill="#cc1a1a">⚔ Painkiller</text>
+    <text x="97" y="62" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" font-style="italic">Pain is a language. Speak it.</text>
+  </g>
+
+  <!-- Sanguine Knight -->
+  <g transform="translate(435,15)">
+    <rect width="215" height="70" rx="3" fill="#120008" stroke="#8b0000" stroke-width="0.7" stroke-opacity="0.6"/>
+    <rect width="215" height="70" rx="3" fill="#8b0000" opacity="0.04"/>
+    <text x="107" y="28" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" letter-spacing="3">SUBCLASS III</text>
+    <text x="107" y="48" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="17" font-weight="bold" fill="#cc1a1a">🩸 Sanguine Knight</text>
+    <text x="107" y="62" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" font-style="italic">Blood is the only currency</text>
+  </g>
+
+  <!-- Shadowmaster -->
+  <g transform="translate(665,15)">
+    <rect width="220" height="70" rx="3" fill="#120008" stroke="#8b0000" stroke-width="0.7" stroke-opacity="0.6"/>
+    <rect width="220" height="70" rx="3" fill="#8b0000" opacity="0.04"/>
+    <text x="110" y="28" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" letter-spacing="3">SUBCLASS IV</text>
+    <text x="110" y="48" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="17" font-weight="bold" fill="#cc1a1a">🌑 Shadowmaster</text>
+    <text x="110" y="62" text-anchor="middle" font-family="'Palatino Linotype', Palatino, serif" font-size="9" fill="#4a0010" font-style="italic">Death never sees you coming</text>
+  </g>
+</svg>
