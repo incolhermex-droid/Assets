@@ -1,0 +1,129 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060c06"/>
+      <stop offset="50%" style="stop-color:#0a1a08"/>
+      <stop offset="100%" style="stop-color:#060c06"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a3a10"/>
+      <stop offset="25%" style="stop-color:#4a7a28"/>
+      <stop offset="50%" style="stop-color:#6aaa3a"/>
+      <stop offset="75%" style="stop-color:#4a7a28"/>
+      <stop offset="100%" style="stop-color:#1a3a10"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#060c06;stop-opacity:1"/>
+      <stop offset="15%" style="stop-color:#4a7a28;stop-opacity:0.7"/>
+      <stop offset="50%" style="stop-color:#6aaa3a;stop-opacity:1"/>
+      <stop offset="85%" style="stop-color:#4a7a28;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#060c06;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="mistglow" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a1a08;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#1a3a10;stop-opacity:0.35"/>
+    </linearGradient>
+    <filter id="glow-green">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,10 L10,0" stroke="#4a7a28" stroke-width="0.3" opacity="0.07"/>
+    </pattern>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="900" height="220" fill="url(#bg)"/>
+  <rect width="900" height="220" fill="url(#hatch)"/>
+  <rect width="900" height="220" fill="url(#mistglow)"/>
+
+  <!-- Side borders -->
+  <rect x="0" y="0" width="3" height="220" fill="url(#green)" opacity="0.7"/>
+  <rect x="897" y="0" width="3" height="220" fill="url(#green)" opacity="0.7"/>
+  <rect x="0" y="0" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+  <rect x="0" y="218" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+
+  <!-- Corner ornaments - top left -->
+  <g stroke="#4a7a28" stroke-width="1.2" fill="none" opacity="0.65">
+    <path d="M25,25 L70,25"/>
+    <path d="M25,25 L25,70"/>
+    <path d="M30,30 L60,30"/>
+    <path d="M30,30 L30,60"/>
+    <circle cx="25" cy="25" r="3" fill="#4a7a28" stroke="none"/>
+  </g>
+  <!-- Corner ornaments - top right -->
+  <g stroke="#4a7a28" stroke-width="1.2" fill="none" opacity="0.65">
+    <path d="M875,25 L830,25"/>
+    <path d="M875,25 L875,70"/>
+    <path d="M870,30 L840,30"/>
+    <path d="M870,30 L870,60"/>
+    <circle cx="875" cy="25" r="3" fill="#4a7a28" stroke="none"/>
+  </g>
+  <!-- Corner ornaments - bottom left -->
+  <g stroke="#4a7a28" stroke-width="1.2" fill="none" opacity="0.65">
+    <path d="M25,195 L70,195"/>
+    <path d="M25,195 L25,150"/>
+    <path d="M30,190 L60,190"/>
+    <path d="M30,190 L30,160"/>
+    <circle cx="25" cy="195" r="3" fill="#4a7a28" stroke="none"/>
+  </g>
+  <!-- Corner ornaments - bottom right -->
+  <g stroke="#4a7a28" stroke-width="1.2" fill="none" opacity="0.65">
+    <path d="M875,195 L830,195"/>
+    <path d="M875,195 L875,150"/>
+    <path d="M870,190 L840,190"/>
+    <path d="M870,190 L870,160"/>
+    <circle cx="875" cy="195" r="3" fill="#4a7a28" stroke="none"/>
+  </g>
+
+  <!-- Abstract claw marks - left -->
+  <g stroke="#4a7a28" stroke-width="1" opacity="0.12" stroke-linecap="round">
+    <path d="M110,60 Q120,90 108,130"/>
+    <path d="M122,55 Q135,88 120,132"/>
+    <path d="M134,62 Q144,92 132,128"/>
+  </g>
+  <!-- Abstract claw marks - right -->
+  <g stroke="#4a7a28" stroke-width="1" opacity="0.12" stroke-linecap="round">
+    <path d="M790,60 Q780,90 792,130"/>
+    <path d="M778,55 Q765,88 780,132"/>
+    <path d="M766,62 Q756,92 768,128"/>
+  </g>
+
+  <!-- Top separator -->
+  <rect x="100" y="50" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <!-- Source badge top -->
+  <text x="450" y="40" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="10" fill="#2a5010" letter-spacing="8">✦ DnD 5.5e ALL-IN-ONE BEYOND ✦</text>
+
+  <!-- Main title -->
+  <text x="450" y="120" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="70" font-weight="bold" fill="url(#green)" filter="url(#glow-green)" letter-spacing="6">CREATURES</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="148" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="13" fill="#4a7a28" letter-spacing="5" opacity="0.9">REBUILT FOR THE 2024 MONSTER MANUAL</text>
+
+  <!-- Bottom separator -->
+  <rect x="100" y="164" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <!-- Creature count row -->
+  <g font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#2a5010">
+    <text x="270" y="188" text-anchor="middle">CREATURES UPDATED</text>
+    <text x="270" y="206" text-anchor="middle" font-size="18" font-weight="bold" fill="#6aaa3a" filter="url(#glow-soft)">4</text>
+
+    <line x1="390" y1="178" x2="390" y2="210" stroke="#2a5010" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="450" y="188" text-anchor="middle">STATUS</text>
+    <text x="450" y="206" text-anchor="middle" font-size="13" font-weight="bold" fill="#6aaa3a">IN PROGRESS</text>
+
+    <line x1="510" y1="178" x2="510" y2="210" stroke="#2a5010" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="630" y="188" text-anchor="middle">NEXT UPDATE</text>
+    <text x="630" y="206" text-anchor="middle" font-size="13" font-weight="bold" fill="#6aaa3a">EXPANDING</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="450" y="218" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="0" fill="#1a3a10" font-style="italic">placeholder</text>
+</svg>
