@@ -80,6 +80,7 @@ All backgrounds updated to the 2024 PHB format — each now grants its **Origin 
 
 ### [Creatures](./README/README_Creatures.MD)
 ![Banner](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/creatures-banner.svg)
+
 The monsters you face play by the same rules you do — rebuilt for 2024.
 
 - **Bugbear** — Extra Attack implemented; all variants updated
