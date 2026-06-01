@@ -74,6 +74,8 @@ Every base class has been **rebuilt from scratch** to match the 2024 PHB — not
 - Subclasses revised and expanded
 - Full Extra Attack and multiclassing support
 
+![Divider](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/divider.svg)
+
 ### [Character Backgrounds](./README/README_Background.MD)
 
 All backgrounds updated to the 2024 PHB format — each now grants its **Origin Feat**, two skill proficiencies, and a starting equipment package.
