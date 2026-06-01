@@ -78,6 +78,8 @@ Every base class has been **rebuilt from scratch** to match the 2024 PHB — not
 
 All backgrounds updated to the 2024 PHB format — each now grants its **Origin Feat**, two skill proficiencies, and a starting equipment package.
 
+<div align="center">
+
 ![Banner](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/creatures-banner.svg)
 
 ### [Creatures](./README/README_Creatures.MD)
@@ -88,6 +90,8 @@ The monsters you face play by the same rules you do — rebuilt for 2024.
 - **Dire Wolf** — Action resources corrected across all variants
 - **Wolf** — Action resources corrected across all variants (companion, wildshape, enemy)
 - **Worg** — Action resources corrected across all variants
+
+</div>
 
 ### [Feats](./README/README_Feat.MD)
 
