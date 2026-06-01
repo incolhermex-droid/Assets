@@ -82,8 +82,6 @@ All backgrounds updated to the 2024 PHB format — each now grants its **Origin 
 
 ![Banner](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/creatures-banner.svg)
 
-![Divider](https://raw.githubusercontent.com/incolhermex-droid/Assets/refs/heads/main/divider.svg)
-
 ### [Creatures](./README/README_Creatures.MD)
 
 <div align="center">
