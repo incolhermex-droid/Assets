@@ -82,7 +82,7 @@
     <text x="450" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#f06000">DEX · WIS</text>
     <line x1="490" y1="210" x2="490" y2="252" stroke="#a03000" stroke-width="0.6" opacity="0.4"/>
     <text x="570" y="223" text-anchor="middle" font-size="11" letter-spacing="1">ELEMENTS</text>
-    <text x="570" y="243" text-anchor="middle" font-size="10" font-weight="bold" fill="#f06000">ACID·FIRE·ICE·LIGHTNING·THUNDER</text>
+    <text x="565" y="243" text-anchor="middle" font-size="10" font-weight="bold" fill="#f06000">ACID·FIRE·ICE·LIGHTNING·THUNDER</text>
     <line x1="645" y1="210" x2="645" y2="252" stroke="#a03000" stroke-width="0.6" opacity="0.4"/>
     <text x="725" y="223" text-anchor="middle" font-size="11" letter-spacing="1">FEATURES</text>
     <text x="725" y="243" text-anchor="middle" font-size="20" font-weight="bold" fill="#f06000" filter="url(#glow-soft)">3</text>
