@@ -1,0 +1,144 @@
+<svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06020a"/>
+      <stop offset="50%" style="stop-color:#0d0415"/>
+      <stop offset="100%" style="stop-color:#06020a"/>
+    </linearGradient>
+    <linearGradient id="void" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#180030"/>
+      <stop offset="25%" style="stop-color:#5a0090"/>
+      <stop offset="50%" style="stop-color:#9820d0"/>
+      <stop offset="75%" style="stop-color:#5a0090"/>
+      <stop offset="100%" style="stop-color:#180030"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06020a;stop-opacity:1"/>
+      <stop offset="15%" style="stop-color:#5a0090;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#9820d0;stop-opacity:1"/>
+      <stop offset="85%" style="stop-color:#5a0090;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#06020a;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="voidglow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#9820d0;stop-opacity:0.13"/>
+      <stop offset="100%" style="stop-color:#06020a;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow-void">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0,10 L10,0" stroke="#5a0090" stroke-width="0.2" opacity="0.14"/>
+    </pattern>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.7" fill="#5a0090" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <!-- Base -->
+  <rect width="900" height="300" fill="url(#bg)"/>
+  <rect width="900" height="300" fill="url(#hatch)"/>
+  <rect width="900" height="300" fill="url(#dots)"/>
+  <rect width="900" height="300" fill="url(#voidglow)"/>
+
+  <!-- Borders -->
+  <rect x="0" y="0" width="3" height="300" fill="url(#void)" opacity="0.9"/>
+  <rect x="897" y="0" width="3" height="300" fill="url(#void)" opacity="0.9"/>
+  <rect x="0" y="0" width="900" height="2" fill="url(#fade)" opacity="0.9"/>
+  <rect x="0" y="298" width="900" height="2" fill="url(#fade)" opacity="0.9"/>
+
+  <!-- Eldritch eye / patron symbol -->
+  <ellipse cx="450" cy="128" rx="90" ry="55" fill="none" stroke="#5a0090" stroke-width="0.8" opacity="0.22"/>
+  <ellipse cx="450" cy="128" rx="68" ry="38" fill="none" stroke="#5a0090" stroke-width="0.4" opacity="0.14"/>
+  <circle cx="450" cy="128" r="20" fill="none" stroke="#5a0090" stroke-width="0.6" opacity="0.18"/>
+  <!-- Pact tentacles suggestion -->
+  <g stroke="#5a0090" stroke-width="0.5" opacity="0.1" stroke-linecap="round">
+    <path d="M360,128 Q390,108 410,128 Q390,148 360,128"/>
+    <path d="M540,128 Q510,108 490,128 Q510,148 540,128"/>
+    <line x1="450" y1="43" x2="450" y2="73"/>
+    <line x1="450" y1="183" x2="450" y2="213"/>
+  </g>
+
+  <!-- Corner ornaments -->
+  <g stroke="#5a0090" stroke-width="1" fill="none" opacity="0.6">
+    <path d="M20,20 L75,20 M20,20 L20,75"/>
+    <path d="M28,28 L65,28 M28,28 L28,65"/>
+    <circle cx="20" cy="20" r="3" fill="#5a0090" stroke="none" opacity="0.9"/>
+    <circle cx="36" cy="20" r="1.5" fill="#5a0090" stroke="none" opacity="0.5"/>
+    <circle cx="20" cy="36" r="1.5" fill="#5a0090" stroke="none" opacity="0.5"/>
+    <path d="M880,20 L825,20 M880,20 L880,75"/>
+    <path d="M872,28 L835,28 M872,28 L872,65"/>
+    <circle cx="880" cy="20" r="3" fill="#5a0090" stroke="none" opacity="0.9"/>
+    <circle cx="864" cy="20" r="1.5" fill="#5a0090" stroke="none" opacity="0.5"/>
+    <circle cx="880" cy="36" r="1.5" fill="#5a0090" stroke="none" opacity="0.5"/>
+    <path d="M20,280 L75,280 M20,280 L20,225"/>
+    <path d="M28,272 L65,272 M28,272 L28,235"/>
+    <circle cx="20" cy="280" r="3" fill="#5a0090" stroke="none" opacity="0.9"/>
+    <path d="M880,280 L825,280 M880,280 L880,225"/>
+    <path d="M872,272 L835,272 M872,272 L872,235"/>
+    <circle cx="880" cy="280" r="3" fill="#5a0090" stroke="none" opacity="0.9"/>
+  </g>
+
+  <!-- Void wisps -->
+  <g fill="#9820d0" opacity="0.16">
+    <ellipse cx="180" cy="2" rx="1.5" ry="11"/>
+    <ellipse cx="310" cy="2" rx="2" ry="8"/>
+    <ellipse cx="590" cy="2" rx="1.5" ry="13"/>
+    <ellipse cx="720" cy="2" rx="2" ry="9"/>
+  </g>
+
+  <!-- Top separator -->
+  <rect x="100" y="58" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <!-- Source badge -->
+  <text x="450" y="48" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="10" fill="#180030" letter-spacing="8">✦ DnD 5.5e ALL-IN-ONE BEYOND ✦</text>
+
+  <!-- BASE CLASS badge -->
+  <rect x="355" y="66" width="190" height="24" rx="2" fill="#06020a" opacity="0.9"/>
+  <rect x="355" y="66" width="190" height="24" rx="2" fill="none" stroke="#5a0090" stroke-width="0.8"/>
+  <text x="450" y="83" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="11" fill="#9820d0" letter-spacing="5">BASE CLASS</text>
+
+  <!-- Main title -->
+  <text x="450" y="157" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="66" font-weight="bold" fill="url(#void)" filter="url(#glow-void)" letter-spacing="6">WARLOCK</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="182" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="13" fill="#5a0090" letter-spacing="5" opacity="0.9">PACT MAGIC · ELDRITCH INVOCATIONS · MYSTIC ARCANUM</text>
+
+  <!-- Bottom separator -->
+  <rect x="100" y="200" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <!-- Stats row -->
+  <g font-family="'Palatino Linotype', Palatino, Georgia, serif" fill="#180030">
+    <text x="180" y="228" text-anchor="middle" font-size="11" letter-spacing="1">HIT DIE</text>
+    <text x="180" y="248" text-anchor="middle" font-size="20" font-weight="bold" fill="#9820d0" filter="url(#glow-soft)">d8</text>
+
+    <line x1="265" y1="215" x2="265" y2="255" stroke="#5a0090" stroke-width="0.6" opacity="0.4"/>
+
+    <text x="345" y="228" text-anchor="middle" font-size="11" letter-spacing="1">SUBCLASS AT</text>
+    <text x="345" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#9820d0">LEVEL 1</text>
+
+    <line x1="420" y1="215" x2="420" y2="255" stroke="#5a0090" stroke-width="0.6" opacity="0.4"/>
+
+    <text x="450" y="225" text-anchor="middle" font-size="11" letter-spacing="1">PRIMARY</text>
+    <text x="450" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#9820d0">CHA</text>
+
+    <line x1="490" y1="215" x2="490" y2="255" stroke="#5a0090" stroke-width="0.6" opacity="0.4"/>
+
+    <text x="570" y="228" text-anchor="middle" font-size="11" letter-spacing="1">INVOCATIONS</text>
+    <text x="570" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#9820d0">20+</text>
+
+    <line x1="645" y1="215" x2="645" y2="255" stroke="#5a0090" stroke-width="0.6" opacity="0.4"/>
+
+    <text x="725" y="228" text-anchor="middle" font-size="11" letter-spacing="1">SUBCLASSES</text>
+    <text x="725" y="248" text-anchor="middle" font-size="20" font-weight="bold" fill="#9820d0" filter="url(#glow-soft)">6</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="450" y="282" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#180030" font-style="italic">
+    "You didn't earn this power. You made a deal for it. Know the difference."
+  </text>
+</svg>
