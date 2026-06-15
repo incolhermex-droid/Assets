@@ -73,10 +73,10 @@
     <text x="345" y="243" text-anchor="middle" font-size="13" font-weight="bold" fill="#a0c0d0">LEVEL 3</text>
     <line x1="420" y1="210" x2="420" y2="252" stroke="#506070" stroke-width="0.6" opacity="0.4"/>
     <text x="450" y="220" text-anchor="middle" font-size="11" letter-spacing="1">PRIMARY</text>
-    <text x="450" y="240" text-anchor="middle" font-size="13" font-weight="bold" fill="#a0c0d0">DEX · WIS</text>
+    <text x="450" y="230" text-anchor="middle" font-size="13" font-weight="bold" fill="#a0c0d0">DEX · WIS</text>
     <line x1="490" y1="210" x2="490" y2="252" stroke="#506070" stroke-width="0.6" opacity="0.4"/>
     <text x="570" y="223" text-anchor="middle" font-size="11" letter-spacing="1">KEY FEATURE</text>
-    <text x="570" y="243" text-anchor="middle" font-size="11" font-weight="bold" fill="#a0c0d0">OPEN HAND TECH.</text>
+    <text x="570" y="243" text-anchor="middle" font-size="12" font-weight="bold" fill="#a0c0d0">OPEN HAND TECH.</text>
     <line x1="645" y1="210" x2="645" y2="252" stroke="#506070" stroke-width="0.6" opacity="0.4"/>
     <text x="725" y="223" text-anchor="middle" font-size="11" letter-spacing="1">FEATURES</text>
     <text x="725" y="243" text-anchor="middle" font-size="20" font-weight="bold" fill="#a0c0d0" filter="url(#glow-soft)">3</text>
