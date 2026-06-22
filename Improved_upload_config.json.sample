@@ -1,0 +1,47 @@
+{
+  "_comment_1": "=== Nexus Mods Upload Configuration - Improved Sample ===",
+  "_comment_2": "1. Copy this file to 'upload_config.json'",
+  "_comment_3": "2. Fill in your real values",
+  "_comment_4": "3. Do NOT commit upload_config.json to git (contains sensitive data)",
+
+  "api_key": "",
+  "_comment_api_key": "RECOMMENDED: Leave empty and use environment variable NEXUS_API_KEY instead (more secure).",
+
+  "search_folder": "./releases",
+  "_comment_search_folder": "Folder containing your .zip files. Script will automatically pick the newest one.",
+
+  "mod_id": 12345,
+  "_comment_mod_id": "Your Nexus Mods mod ID (required)",
+
+  "name": "D&D 5e - My Awesome Mod",
+  "_comment_name": "Name that will appear on Nexus Mods",
+
+  "version": null,
+  "_comment_version": "Leave as null → script will use the .zip filename as version",
+
+  "file_category": "main",
+  "_comment_file_category": "Valid options: 'main', 'optional', 'miscellaneous'",
+
+  "description": "Changelog or description for this version.\n\n- Added new content\n- Fixed compatibility with latest game version\n- Improved performance",
+  "_comment_description": "You can use \\n for line breaks",
+
+  "mod_file_id": null,
+  "_comment_mod_file_id": "Leave as null for first upload (new file). Put the File ID if you are uploading a new version of an existing file.",
+
+  "primary_mod_manager_download": true,
+  "allow_mod_manager_download": true,
+  "_comment_mod_manager": "Keep these as true for better Vortex / Mod Manager support",
+
+  "show_requirements_pop_up": false,
+  "_comment_requirements": "If true, shows a requirements popup to users when downloading",
+
+  "archive_existing_file": false,
+  "_comment_archive": "Only relevant when mod_file_id is set. Archives the previous version.",
+
+  "previous_version_id": null,
+  "_comment_previous_version": "Optional: ID of the previous version this one replaces",
+
+  "_comment_optional": "=== Optional fields (advanced) ===",
+  "upload_content_type": "application/octet-stream",
+  "upload_content_disposition": null
+}
