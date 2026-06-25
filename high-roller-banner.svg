@@ -1,0 +1,132 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0805"/>
+      <stop offset="40%" style="stop-color:#160e06"/>
+      <stop offset="100%" style="stop-color:#0a0805"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3d2a00"/>
+      <stop offset="25%" style="stop-color:#b58d1d"/>
+      <stop offset="50%" style="stop-color:#e8c23a"/>
+      <stop offset="75%" style="stop-color:#b58d1d"/>
+      <stop offset="100%" style="stop-color:#3d2a00"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0a0805;stop-opacity:1"/>
+      <stop offset="15%" style="stop-color:#b58d1d;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#e8c23a;stop-opacity:0.9"/>
+      <stop offset="85%" style="stop-color:#b58d1d;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#0a0805;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="smoke" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1500;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#2a2200;stop-opacity:0.4"/>
+    </linearGradient>
+    <filter id="glow-gold">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0,8 L8,0" stroke="#b58d1d" stroke-width="0.3" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="280" fill="url(#bg)"/>
+  <rect width="900" height="280" fill="url(#hatch)"/>
+  <rect width="900" height="280" fill="url(#smoke)"/>
+
+  <rect x="0" y="0" width="3" height="280" fill="url(#gold)" opacity="0.7"/>
+  <rect x="897" y="0" width="3" height="280" fill="url(#gold)" opacity="0.7"/>
+  <rect x="0" y="0" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+  <rect x="0" y="278" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+
+  <g stroke="#b58d1d" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M25,25 L70,25"/>
+    <path d="M25,25 L25,70"/>
+    <path d="M30,30 L60,30"/>
+    <path d="M30,30 L30,60"/>
+    <circle cx="25" cy="25" r="3" fill="#b58d1d" stroke="none"/>
+  </g>
+  <g stroke="#b58d1d" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M875,25 L830,25"/>
+    <path d="M875,25 L875,70"/>
+    <path d="M870,30 L840,30"/>
+    <path d="M870,30 L870,60"/>
+    <circle cx="875" cy="25" r="3" fill="#b58d1d" stroke="none"/>
+  </g>
+  <g stroke="#b58d1d" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M25,255 L70,255"/>
+    <path d="M25,255 L25,210"/>
+    <path d="M30,250 L60,250"/>
+    <path d="M30,250 L30,220"/>
+    <circle cx="25" cy="255" r="3" fill="#b58d1d" stroke="none"/>
+  </g>
+  <g stroke="#b58d1d" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M875,255 L830,255"/>
+    <path d="M875,255 L875,210"/>
+    <path d="M870,250 L840,250"/>
+    <path d="M870,250 L870,220"/>
+    <circle cx="875" cy="255" r="3" fill="#b58d1d" stroke="none"/>
+  </g>
+
+  <!-- Dice pips decoration left -->
+  <g opacity="0.15" fill="#e8c23a">
+    <rect x="95" y="155" width="40" height="40" rx="4" fill="none" stroke="#e8c23a" stroke-width="1.2"/>
+    <circle cx="105" cy="165" r="2.5"/>
+    <circle cx="125" cy="165" r="2.5"/>
+    <circle cx="115" cy="175" r="2.5"/>
+    <circle cx="105" cy="185" r="2.5"/>
+    <circle cx="125" cy="185" r="2.5"/>
+  </g>
+  <g opacity="0.15" fill="#e8c23a" transform="translate(900,0) scale(-1,1)">
+    <rect x="95" y="155" width="40" height="40" rx="4" fill="none" stroke="#e8c23a" stroke-width="1.2"/>
+    <circle cx="105" cy="165" r="2.5"/>
+    <circle cx="125" cy="165" r="2.5"/>
+    <circle cx="115" cy="175" r="2.5"/>
+    <circle cx="105" cy="185" r="2.5"/>
+    <circle cx="125" cy="185" r="2.5"/>
+  </g>
+
+  <rect x="100" y="55" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <text x="450" y="46" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="11" fill="#7a5a10" letter-spacing="8">✦ DnD 5.5e ALL-IN-ONE BEYOND ✦</text>
+
+  <rect x="330" y="64" width="240" height="22" rx="2" fill="#5a4000" opacity="0.6"/>
+  <rect x="330" y="64" width="240" height="22" rx="2" fill="none" stroke="#b58d1d" stroke-width="0.8" opacity="0.8"/>
+  <text x="450" y="79" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="11" fill="#e8c23a" letter-spacing="4">GUNSLINGER SUBCLASS</text>
+
+  <text x="450" y="148" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="60" font-weight="bold" fill="url(#gold)" filter="url(#glow-gold)" letter-spacing="5">HIGH ROLLER</text>
+
+  <text x="450" y="175" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="14" fill="#b58d1d" letter-spacing="5" opacity="0.9">FORTUNE · BLUFF · CALCULATED CHAOS</text>
+
+  <rect x="100" y="192" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <g font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#7a5a10">
+    <text x="230" y="220" text-anchor="middle">UNLOCKS</text>
+    <text x="230" y="238" text-anchor="middle" font-size="18" font-weight="bold" fill="#e8c23a" filter="url(#glow-soft)">LVL 3</text>
+
+    <line x1="310" y1="210" x2="310" y2="245" stroke="#7a5a10" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="390" y="220" text-anchor="middle">PRIMARY</text>
+    <text x="390" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c23a">DEX / WIS</text>
+
+    <line x1="470" y1="210" x2="470" y2="245" stroke="#7a5a10" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="550" y="220" text-anchor="middle">KEY MECHANIC</text>
+    <text x="550" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c23a">RISK (d8)</text>
+
+    <line x1="630" y1="210" x2="630" y2="245" stroke="#7a5a10" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="710" y="220" text-anchor="middle">FEATURES</text>
+    <text x="710" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#e8c23a">4</text>
+  </g>
+
+  <text x="450" y="265" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#4a3500" font-style="italic">
+    "The house always wins — because I'm the house."
+  </text>
+</svg>
