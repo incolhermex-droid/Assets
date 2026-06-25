@@ -1,0 +1,106 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050608"/>
+      <stop offset="40%" style="stop-color:#0a0e12"/>
+      <stop offset="100%" style="stop-color:#050608"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#16202a"/>
+      <stop offset="25%" style="stop-color:#5a7888"/>
+      <stop offset="50%" style="stop-color:#cfe8f0"/>
+      <stop offset="75%" style="stop-color:#5a7888"/>
+      <stop offset="100%" style="stop-color:#16202a"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#050608;stop-opacity:1"/>
+      <stop offset="15%" style="stop-color:#5a7888;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#cfe8f0;stop-opacity:0.9"/>
+      <stop offset="85%" style="stop-color:#5a7888;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#050608;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow-steel">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-soft">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0,8 L8,0" stroke="#5a7888" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="280" fill="url(#bg)"/>
+  <rect width="900" height="280" fill="url(#hatch)"/>
+
+  <rect x="0" y="0" width="3" height="280" fill="url(#steel)" opacity="0.75"/>
+  <rect x="897" y="0" width="3" height="280" fill="url(#steel)" opacity="0.75"/>
+  <rect x="0" y="0" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+  <rect x="0" y="278" width="900" height="2" fill="url(#fade)" opacity="0.8"/>
+
+  <g stroke="#5a7888" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M25,25 L70,25"/><path d="M25,25 L25,70"/>
+    <path d="M30,30 L60,30"/><path d="M30,30 L30,60"/>
+    <circle cx="25" cy="25" r="3" fill="#5a7888" stroke="none"/>
+  </g>
+  <g stroke="#5a7888" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M875,25 L830,25"/><path d="M875,25 L875,70"/>
+    <path d="M870,30 L840,30"/><path d="M870,30 L870,60"/>
+    <circle cx="875" cy="25" r="3" fill="#5a7888" stroke="none"/>
+  </g>
+  <g stroke="#5a7888" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M25,255 L70,255"/><path d="M25,255 L25,210"/>
+    <path d="M30,250 L60,250"/><path d="M30,250 L30,220"/>
+    <circle cx="25" cy="255" r="3" fill="#5a7888" stroke="none"/>
+  </g>
+  <g stroke="#5a7888" stroke-width="1.2" fill="none" opacity="0.7">
+    <path d="M875,255 L830,255"/><path d="M875,255 L875,210"/>
+    <path d="M870,250 L840,250"/><path d="M870,250 L870,220"/>
+    <circle cx="875" cy="255" r="3" fill="#5a7888" stroke="none"/>
+  </g>
+
+  <!-- Star badge symbol -->
+  <g opacity="0.16" fill="none" stroke="#cfe8f0" stroke-width="1">
+    <path d="M450,90 L458,112 L482,112 L463,126 L470,150 L450,136 L430,150 L437,126 L418,112 L442,112 Z"/>
+  </g>
+
+  <rect x="100" y="55" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <text x="450" y="46" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="11" fill="#243038" letter-spacing="8">✦ DnD 5.5e ALL-IN-ONE BEYOND ✦</text>
+
+  <rect x="330" y="64" width="240" height="22" rx="2" fill="#16202a" opacity="0.6"/>
+  <rect x="330" y="64" width="240" height="22" rx="2" fill="none" stroke="#5a7888" stroke-width="0.8" opacity="0.8"/>
+  <text x="450" y="79" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="11" fill="#cfe8f0" letter-spacing="4">GUNSLINGER SUBCLASS</text>
+
+  <text x="450" y="148" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="58" font-weight="bold" fill="url(#steel)" filter="url(#glow-steel)" letter-spacing="4">WHITE HAT</text>
+
+  <text x="450" y="175" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="14" fill="#5a7888" letter-spacing="5" opacity="0.9">THE LAW · NO FEAR · LONG ARM OF JUSTICE</text>
+
+  <rect x="100" y="192" width="700" height="0.8" fill="url(#fade)" opacity="0.5"/>
+
+  <g font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#243038">
+    <text x="230" y="220" text-anchor="middle">UNLOCKS</text>
+    <text x="230" y="238" text-anchor="middle" font-size="18" font-weight="bold" fill="#cfe8f0" filter="url(#glow-soft)">LVL 3</text>
+
+    <line x1="310" y1="210" x2="310" y2="245" stroke="#243038" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="390" y="220" text-anchor="middle">PRIMARY</text>
+    <text x="390" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#cfe8f0">DEX / WIS</text>
+
+    <line x1="470" y1="210" x2="470" y2="245" stroke="#243038" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="550" y="220" text-anchor="middle">KEY MECHANIC</text>
+    <text x="550" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#cfe8f0">INTIMIDATION</text>
+
+    <line x1="630" y1="210" x2="630" y2="245" stroke="#243038" stroke-width="0.8" opacity="0.5"/>
+
+    <text x="710" y="220" text-anchor="middle">FEATURES</text>
+    <text x="710" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#cfe8f0">4</text>
+  </g>
+
+  <text x="450" y="265" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#16202a" font-style="italic">
+    "There are rules. You broke them. I'm here to collect."
+  </text>
+</svg>
