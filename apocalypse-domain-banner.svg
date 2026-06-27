@@ -141,6 +141,6 @@
   <!-- Tagline -->
   <text x="450" y="282" text-anchor="middle" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="12" fill="#200000" font-style="italic">
     "They didn't ask for salvation. They asked for an ending. You deliver."
-    <text x="878" y="282" text-anchor="end" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="9" fill="#ffffff" opacity="0.35" letter-spacing="1">@HermexVar</text>
+  <text x="878" y="282" text-anchor="end" font-family="'Palatino Linotype', Palatino, Georgia, serif" font-size="9" fill="#ffffff" opacity="0.35" letter-spacing="1">@HermexVar</text>
   </text>
 </svg>
