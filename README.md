@@ -1,6 +1,30 @@
-# 🎨 DnD 5.5e All-in-One BEYOND — Visual Assets
+# 🎨 DnD 5.5e All-in-One BEYOND — Documentation & Visual Identity
 
-> Banner collection and description files for the [DnD 5.5e All-in-One BEYOND](https://mod.io/g/baldursgate3/m/dnd55e) mod for Baldur's Gate 3.
+> A complete documentation system and visual identity built from scratch for the [DnD 5.5e All-in-One BEYOND](https://mod.io/g/baldursgate3/m/dnd55e) mod for Baldur's Gate 3 — one of the most comprehensive ruleset overhaul mods on the platform.
+
+---
+
+## 👤 About This Repository
+
+This repository is the original source of the **wiki structure, technical documentation, and SVG visual identity** for the DnD 5.5e All-in-One BEYOND mod, authored and maintained by **[@incolhermex-droid](https://github.com/incolhermex-droid)** — Social Communicator & Journalist, and Spanish localization lead for the mod.
+
+What started as a translation role grew into a full documentation initiative: reading the mod's actual commit history and source code, translating technical implementation details into clear player-facing explanations, and designing a consistent visual system to support it — all without the mod's author requesting it. The wiki pages, class breakdowns, subclass deep-dives, and every banner in this repository were built page by page, commit by commit, over **100+ commits** of iterative work.
+
+This repo serves as the permanent, timestamped record of that work.
+
+---
+
+## 📚 What's Inside
+
+| CATEGORY | CONTENTS |
+|---|---|
+| **Wiki Pages** | Full `.md` breakdowns for every documented class and subclass — Cleric (8 Domains), Warlock (6 Patrons + Eldritch Invocations), Monk (4 Traditions), Gunslinger (3 Archetypes), and more |
+| **Banners** | 25+ custom SVG banners, one per class/subclass, each with a unique color identity matching its thematic role |
+| **Badges & Dividers** | Matching badge and divider SVGs for consistent visual structure across every wiki page |
+| **Mod Descriptions** | Full mod.io/Nexus description (`dnd55e_FINAL.md`) and plain-text in-game mod manager description (`dnd55e_INGAME.txt`) |
+| **Class Suggestion Docs** | Standalone `.md` proposals for Gunslinger and Illrigger class documentation |
+
+Every wiki `.md` file in this repository was written by directly reading the mod's GitHub commit diffs — actual `.stats`, `.khn`, and localization file changes — and translating that implementation into structured, readable documentation with technical accuracy notes for advanced users.
 
 ---
 
@@ -8,79 +32,102 @@
 
 ```
 Assets/
-└── banners/
-    ├── 01_header.svg          ← Main header banner (680×220px)
-    ├── 02_core_rules.svg      ← Core Rules 2024 section divider
-    ├── 03_class_overhaul.svg  ← Class Overhaul section divider
-    ├── 04_new_classes.svg     ← New Classes section divider
-    ├── 05_gunslinger.svg      ← Gunslinger class banner
-    ├── 06_illrigger.svg       ← Illrigger class banner
-    ├── 07_artificer.svg       ← Artificer class banner
-    ├── 08_weapon_mastery.svg  ← Weapon Mastery section divider
-    ├── 09_feats.svg           ← Feats & Origins section divider
-    ├── 10_races.svg           ← Races section divider
-    ├── 11_backgrounds.svg     ← Backgrounds section divider
-    ├── 12_spells_items.svg    ← Spells & Items section divider
-    └── 13_coming_soon.svg     ← Coming Soon section divider
+├── banners/                          ← Legacy section-divider banners (mod.io description)
+│   ├── 01_header.svg
+│   ├── 02_core_rules.svg
+│   └── ... (13 total)
+│
+├── [class]-banner.svg                ← Wiki page banner, one per class/subclass
+├── [class]-badge.svg                 ← Matching badge
+├── [class]-divider.svg               ← Matching section divider
+├── [class]-wiki.md                   ← Full wiki page content
+│
+├── dnd55e_FINAL(Mod.io and Nexus).md ← Full rich-text mod description
+├── dnd55e_INGAME.txt                 ← Plain-text in-game description
+└── README.md
 ```
+
+---
+
+## 🧩 Classes & Subclasses Documented
+
+<details>
+<summary><strong>📋 Click to expand the full documentation index</strong></summary>
+
+### Cleric
+- General class breakdown
+- Apocalypse Domain · Astral Domain (original, mod-exclusive) · Grave Domain · Knowledge Domain · Life Domain · Light Domain · Trickery Domain · War Domain
+
+### Warlock
+- General class breakdown
+- Archfey Patron · Celestial Patron · Fiend Patron · Great Old One Patron · Hexblade Patron · Undead Patron
+- Eldritch Invocations (full system breakdown, 20+ invocations)
+
+### Monk
+- General class breakdown
+- Way of the Open Hand · Way of Mercy · Way of the Four Elements · Way of the Kensei
+
+### Gunslinger *(original class)*
+- General class breakdown
+- High Roller · Spellslinger · White Hat
+
+### Other Systems
+- Spell Scroll Restrictions (full class-by-spell breakdown)
+- Creatures (Monster Manual 2024 conversions)
+
+</details>
+
+Each page includes: feature breakdowns by level, exact mechanical formulas pulled from source code, technical implementation notes, and a playstyle summary written for players evaluating the build.
 
 ---
 
 ## 🔗 Usage
 
-All banners are standalone SVG files with hardcoded colors — no external dependencies.
-
-To embed a banner in any Markdown file, use the raw GitHub URL:
+All banners are standalone SVG files — lightweight, scalable, no external dependencies.
 
 ```markdown
-![banner name](https://raw.githubusercontent.com/incolhermex-droid/Assets/main/banners/01_header.svg)
+![banner name](https://raw.githubusercontent.com/incolhermex-droid/Assets/main/[filename].svg)
 ```
 
-> **Note:** Replace `main` with a specific commit hash if you need a permanent permalink to a frozen version of the assets.
+> Replace `main` with a specific commit hash for a permanent permalink to a frozen version.
 
 ---
 
-## 🗂️ Related Files
+## 🎨 Visual Identity System
 
-| File | Description |
-| :--- | :--- |
-| `dnd55e_FINAL.md` | Full mod.io description with banners embedded |
-| `dnd55e_INGAME.txt` | Plain text version for the in-game BG3 mod manager |
+Every class and subclass has a distinct color identity, designed to be immediately recognizable while maintaining a consistent layout structure (ornamental corners, gradient borders, stat rows, and italicized taglines) across the entire collection:
 
----
-
-## 🎨 Banner Preview
-
-### Header (01_header.svg)
-![header](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/01_header.svg)
-
-### Section Dividers
-
-![core rules](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/02_core_rules.svg)
-![class overhaul](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/03_class_overhaul.svg)
-![new classes](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/04_new_classes.svg)
-![gunslinger](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/05_gunslinger.svg)
-![illrigger](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/06_illrigger.svg)
-![artificer](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/07_artificer.svg)
-![weapon mastery](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/08_weapon_mastery.svg)
-![feats](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/09_feats.svg)
-![races](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/10_races.svg)
-![backgrounds](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/11_backgrounds.svg)
-![spells and items](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/12_spells_items.svg)
-![coming soon](https://raw.githubusercontent.com/incolhermex-droid/Assets/c9dbfbff0ed8f4aaaaa389676acae0f50aae8305/banners/13_coming_soon.svg)
+| THEME | EXAMPLES |
+|---|---|
+| Divine gold | Cleric, Light Domain |
+| Crimson/blood | War Domain, Apocalypse Domain |
+| Void purple | Warlock, Hexblade Patron, Eldritch Invocations |
+| Cosmic green | Great Old One Patron |
+| Corpse green | Undead Patron |
+| Fey emerald | Archfey Patron |
+| Hellfire orange | Fiend Patron |
+| Steel/frost | Way of the Kensei, White Hat |
 
 ---
 
 ## 🔧 Maintenance Notes
 
-- Banners are SVG — lightweight, scalable, no quality loss at any resolution.
-- If the mod receives major content updates, only the affected section dividers need to be replaced.
-- To update a banner: replace the `.svg` file and update the commit hash in `dnd55e_FINAL.md` if using permalinks.
+- Banners are SVG — no quality loss at any resolution.
+- Each wiki `.md` is self-contained and cross-links to related pages.
+- To update a banner: replace the `.svg` file directly; GitHub raw links update automatically.
 
 ---
 
-## 🔗 Links
+## 🔗 Related Links
 
 - **Mod page:** [mod.io/g/baldursgate3/m/dnd55e](https://mod.io/g/baldursgate3/m/dnd55e)
 - **Mod repository:** [github.com/Yoonmoonsik/dnd55e](https://github.com/Yoonmoonsik/dnd55e)
-- **Original author:** [Yoonmoonsik](https://github.com/Yoonmoonsik)
+- **Original mod author:** [Yoonmoonsik](https://github.com/Yoonmoonsik)
+
+---
+
+## ✍️ Author
+
+Documentation, wiki structure, and visual design by **[@incolhermex-droid](https://github.com/incolhermex-droid)** — Social Communicator & Journalist, Spanish localization lead for DnD 5.5e All-in-One BEYOND.
+
+*All commit history in this repository reflects the original authorship and timeline of this documentation work.*
